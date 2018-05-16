@@ -1,0 +1,44 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.enviar()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" >
+			<span id="myAnalisisGenotipoLabel" data-translate="proyectoApp.analisisGenotipo.proc.titulo"></span>
+			{{vm.analisisGenotipo.id}} - {{vm.analisisGenotipo.codigo}}
+		</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+		<alerta lista="vm.alertas" tiempo="10000"></alerta>
+
+		<uib-tabset active="vm.activeForm">
+			<uib-tab  ng-repeat="p in vm.procedimientos track by p.id"
+					  index="p.id">
+				<uib-tab-heading>
+					{{p.nombre}}
+				</uib-tab-heading>
+				<uib-accordion close-others="oneAtATime" ng-hide="!vm.tieneCategorias(p)">
+					<div uib-accordion-group class="panel-default" 
+						 ng-repeat="c in p.categorias track by c.id" is-open="c._open">	
+						<uib-accordion-heading>
+							<a><label>{{c.nombre}}</label></a>
+						</uib-accordion-heading>
+						<parametroprocedimientogrilla parametros="c.parametros"></parametroprocedimientogrilla>
+					</div>
+				</uib-accordion>
+				<span ng-show="!vm.tieneCategorias(p) && !vm.categoriasNoCargadas(p)" data-translate="proyectoApp.analisisGenotipo.proc.sinParametros"></span>
+			</uib-tab>
+		</uib-tabset>
+	
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.enviando" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="general.enviar"></span>
+        </button>
+    </div>
+</form>

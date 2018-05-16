@@ -1,0 +1,23 @@
+{
+    "proyectoApp": {
+        "modoRecoleccion" : {
+            "home": {
+                "title": "Collection Methods",
+                "createLabel": "Create a new Collection Method",
+                "createOrEditLabel": "Create or edit a Collection Method",
+                "search": "Search for Collection Method"
+            },
+            "created": "A new Collection Method is created with identifier {{ param }}",
+            "updated": "A Collection Method is updated with identifier {{ param }}",
+            "deleted": "A Collection Method is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Collection Method {{ id }}?"
+            },
+            "detail": {
+                "title": "Collection Method"
+            },
+            "nombre": "Name",
+			"deleteByIdIn": "The {{param}} Collection Methods were eliminated"
+        }
+    }
+}

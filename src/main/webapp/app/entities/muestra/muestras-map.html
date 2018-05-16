@@ -1,0 +1,39 @@
+<div>
+    <h2 data-translate="proyectoApp.muestra.home.map">Muestras</h2>
+    <jhi-alert></jhi-alert>
+    
+    <br/>
+
+	<div class="container-fluid">
+		<muestrafiltros criterio="vm.criterio"></muestrafiltros>	
+	</div>
+
+	<div class="row">
+
+		<div class="pull-left">
+			<label class="control-label" for="color">Color </label>
+			<color-picker  ng-model="vm.color" options="vm.options" id="color"></color-picker>
+		</div>
+
+		<div class="pull-right">
+			<br/>
+			<button class="btn btn-primary" ng-click="vm.loadAll()" >
+				<span class="glyphicon glyphicon-ok-circle"></span>
+			</button>
+			<button class="btn btn-default" ng-click="vm.clearAll()" >
+				<span class="glyphicon glyphicon-ban-circle"></span>
+			</button>		
+		</div>
+	</div>
+
+    <br/>
+    
+	<openlayers ol-defaults="vm.map.config" ol-center="vm.map.center" ol-defaults="vm.map.defaults" 
+				ol-controls="vm.map.controls" height="480px" width="100%">
+		<ol-marker ng-repeat="marker in vm.map.markers" ol-marker-properties="marker"></ol-marker>
+		<ol-control name="{{ control.name }}" ol-control-properties="control" ng-repeat="control in vm.map.controls"></ol-control>
+
+    </openlayers>
+	
+
+</div>

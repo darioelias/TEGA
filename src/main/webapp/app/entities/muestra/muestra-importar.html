@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" data-translate="proyectoApp.muestra.importacion.titulo"></h4>
+    </div>
+    <div class="modal-body">
+        <alerta lista="vm.alertas" tiempo="10000"> </alerta>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label" data-translate="general.archivo" for="archivo"></label>
+					<input type="file" class="form-control-file" ngf-select ng-model="vm.archivo" name="archivo" id="archivo" 
+						   ngf-max-size="10MB" ngf-min-height="100" ng-disabled="vm.subiendo"/>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label class="control-label" data-translate="proyectoApp.muestra.importacion.datosAImportar" 
+						   for="datosAImportar"></label>
+					<select class="form-control" name="datosAImportar" ng-model="vm.datosAImportar" 
+							ng-disabled="vm.subiendo" id="datosAImportar">
+						<option value="MUESTRAS" data-translate="proyectoApp.muestra.importacion.MUESTRAS"></option>
+						<option value="ATRIBUTOS" data-translate="proyectoApp.muestra.importacion.ATRIBUTOS"></option>		  
+					</select>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label class="control-label" data-translate="general.separador" for="separador"></label>
+					<input type="text" class="form-control col-md-3" name="separador" id="separador"
+							ng-model="vm.separador" ng-disabled="vm.subiendo"/>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="row">
+			<div class="col-md-6">
+				
+				<button type="button" class="btn btn-primary" ng-click="vm.subir()" ng-disabled="vm.subiendo">
+					<span class="glyphicon glyphicon-upload"></span>
+				</button>
+				&nbsp;
+				<label ng-show="vm.subiendo" data-translate="general.importando-archivo" ></label>
+				<img ng-show="vm.subiendo" src="content/images/loading.gif"/>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="row">
+			<div class="table-responsive table-scroll-items">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th><span data-translate="general.detalle"></span></th>
+							<th><span data-translate="general.valor"></span></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="r in vm.resultados">
+			            	<td data-translate="{{'proyectoApp.muestra.importacion.' + r.codigo}}"></td>
+							<td >{{r.cantidad}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+			<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+    </div>
+</form>

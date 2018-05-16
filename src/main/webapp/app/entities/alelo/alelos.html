@@ -1,0 +1,82 @@
+<div>
+    <h2 data-translate="proyectoApp.alelo.home.title">Alelos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid" has-authority="ROLE_ABM">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" type="button" ng-click="vm.crearEditar()" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="proyectoApp.alelo.home.createLabel">
+                        Create new Alelo
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+	<br/>
+
+	<div class="container-fluid">
+		<alelofiltros criterio="vm.criterio"/>
+	</div>
+
+	<div class="row">
+		<btntabla actualizar="vm.loadAll" lista="vm.alelos" titulo="alelos"
+				  camposexp="id,valor,indice,locus.codigo,muestra.codigoInterno"
+				  importar="vm.importar"  
+				  servicio="Alelo" filtros="alelofiltros" campodetalle="muestra.codigoInterno,locus.codigo,indice,valor"
+				  trsel="proyectoApp.alelo.home.title" solodetalle="true" class="pull-right"></btntabla>
+	</div>
+
+    <div class="table-responsive table-scroll">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.loadAll()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="valor"><span data-translate="proyectoApp.alelo.valor">Valor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="indice"><span data-translate="proyectoApp.alelo.indice">Indice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locus.codigo"><span data-translate="proyectoApp.alelo.locus">Locus</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="muestra.codigoInterno"><span data-translate="proyectoApp.alelo.muestra">Muestra</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="alelo in vm.alelos track by alelo.id">
+                    <td><a ui-sref="alelo-detail({id:alelo.id})">{{alelo.id}}</a></td>
+                    <td>{{alelo.valor}}</td>
+                    <td>{{alelo.indice}}</td>
+                    <td>
+                        <a ui-sref="locus-detail({id:alelo.locus.id})">{{alelo.locus.codigo}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="muestra-detail({id:alelo.muestra.id})">{{alelo.muestra.codigoInterno}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="alelo-detail({id:alelo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.crearEditar(alelo.id)"
+                                    class="btn btn-primary btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.eliminar(alelo.id)"
+                                    class="btn btn-danger btn-sm" 
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <pietabla total="vm.totalItems" page="vm.page" itemspage="vm.itemsPerPage" change="vm.loadAll"> </pietabla>
+</div>

@@ -1,0 +1,24 @@
+{
+    "proyectoApp": {
+        "institucion" : {
+            "home": {
+                "title": "Instituciones",
+                "createLabel": "Crear nueva Institución",
+                "createOrEditLabel": "Crear o editar Institución",
+                "search": "Buscar Institución"
+            },
+            "created": "Una nueva Institución ha sido creada con el identificador {{ param }}",
+            "updated": "Una Institución ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Institución ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Institución {{ id }}?"
+            },
+            "detail": {
+                "title": "Institución"
+            },
+            "nombre": "Nombre",
+            "localidad": "Localidad",
+			"deleteByIdIn": "Se eliminaron las {{param}} Instituciones"
+        }
+    }
+}

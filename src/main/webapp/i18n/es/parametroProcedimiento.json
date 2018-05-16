@@ -1,0 +1,29 @@
+{
+    "proyectoApp": {
+        "parametroProcedimiento" : {
+            "home": {
+                "title": "Parámetros de Procedimientos",
+                "createLabel": "Crear nuevo Parámetro de Procedimiento",
+                "createOrEditLabel": "Crear o editar Parámetro de Procedimiento",
+                "search": "Buscar Parámetro de Procedimiento"
+            },
+            "created": "Un nuevo Parámetro de Procedimiento ha sido creado con el identificador {{ param }}",
+            "updated": "Un Parámetro de Procedimiento ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Parámetro de Procedimiento ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Parámetro de Procedimiento {{ id }}?"
+            },
+            "detail": {
+                "title": "Parámetro de Procedimiento"
+            },
+			"codigo":"Código",
+            "detalle": "Detalle",
+			"valor": "Valor",
+			"tipo": "Tipo",
+			"categoriaParametroProcedimiento": "Categoría",
+			"procedimiento": "Procedimiento",
+			"deleteByIdIn": "Se eliminaron los {{param}} Parámetros de Procedimientos",
+			"noEditable": "No editable"
+        }
+    }
+}

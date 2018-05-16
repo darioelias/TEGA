@@ -1,0 +1,24 @@
+{
+    "proyectoApp": {
+        "localidad" : {
+            "home": {
+                "title": "Localities",
+                "createLabel": "Create a new Locality",
+                "createOrEditLabel": "Create or edit a Locality",
+                "search": "Search for Locality"
+            },
+            "created": "A new Locality is created with identifier {{ param }}",
+            "updated": "A Locality is updated with identifier {{ param }}",
+            "deleted": "A Locality is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Locality {{ id }}?"
+            },
+            "detail": {
+                "title": "Locality"
+            },
+            "nombre": "Name",
+            "provincia": "Province",
+			"deleteByIdIn": "The {{param}} Localities were eliminated"
+        }
+    }
+}

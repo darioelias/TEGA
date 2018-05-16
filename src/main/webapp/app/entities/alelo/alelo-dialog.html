@@ -1,0 +1,50 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAleloLabel" data-translate="proyectoApp.alelo.home.createOrEditLabel">Create or edit a Alelo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.alelo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.alelo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.alelo.valor" for="field_valor">Valor</label>
+            <input type="text" class="form-control" name="valor" id="field_valor"
+                    ng-model="vm.alelo.valor"
+                    required />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.alelo.indice" for="field_indice">Indice</label>
+            <input type="number" class="form-control" name="indice" id="field_indice"
+                    ng-model="vm.alelo.indice" min="1" max="{{vm.alelo.locus.ploidia}}"
+                    required />
+        </div>
+
+ 
+		<selectentity destino="vm.alelo.locus" servicio="Locus"
+					  tr="proyectoApp.alelo.locus" opcional="false" ></selectentity>	
+			
+		<selectentity destino="vm.alelo.muestra" servicio="Muestra" campocodigo="codigoInterno"
+						tr="proyectoApp.alelo.muestra" opcional="false"></selectentity>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.alelo.publico" for="field_publico">Publico</label>
+			<input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.alelo.publico"/>
+		</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<div class="row"> 
+	
+	<div class="col-sm-4 col-xs-6 ">
+	</div>
+
+	<div class="col-sm-4 col-xs-6 ">
+		 <div class="text-center">
+			 <jhi-item-count page="page" total="total" items-per-page="itemspage"></jhi-item-count>
+			 <uib-pagination class="pagination-sm" total-items="total" 
+							 items-per-page="itemspage" ng-model="page" ng-change="changeAux()"></uib-pagination>
+		 </div>
+	</div>
+
+	<div class="col-sm-4 col-xs-6">
+		
+		<div class="row">
+			<div class="text-right">
+				<span data-translate="general.filas-pagina" for="filas-pagina"> </span>	
+			</div>
+		</div>
+		<div class="row">		
+			<input type="number" id="filas-pagina" class="form-control form-control-sm col-fixed-90 pull-right" 
+				   ng-model="itemspageAux" ng-blur="changeAux()" ng-keypress="keyPress($event)" min=1/>  
+		</div>	
+		
+	</div>
+   			
+</div>

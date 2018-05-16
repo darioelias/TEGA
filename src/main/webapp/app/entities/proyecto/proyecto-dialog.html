@@ -1,0 +1,66 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProyectoLabel" data-translate="proyectoApp.proyecto.home.createOrEditLabel">Create or edit a Proyecto</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.proyecto.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.proyecto.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.proyecto.codigo" for="field_codigo">Codigo</label>
+            <input type="text" class="form-control" name="codigo" id="field_codigo"
+                    ng-model="vm.proyecto.codigo"
+                    required />
+            <div ng-show="editForm.codigo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.codigo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+		<inputdate valor="vm.proyecto.fecha" tr="proyectoApp.proyecto.fecha"> </inputdate>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.proyecto.detalle" for="field_detalle">Detalle</label>
+            <input type="text" class="form-control" name="detalle" id="field_detalle"
+                    ng-model="vm.proyecto.detalle"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.proyecto.publico" for="field_publico">Publico</label>
+			<input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.proyecto.publico"/>
+
+		</div>
+
+		<uib-accordion close-others="oneAtATime">
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="general.atributos" ></headeraccordion>
+				<atributogrilla atributos="vm.proyecto.atributos" idobj="vm.proyecto.id" 
+								servicio="Proyecto" entidad="PROYECTO"> </atributogrilla>
+			</div>
+			<div uib-accordion-group class="panel-default" is-disabled="vm.proyecto.id == null">	
+				<headeraccordion tr="general.archivos" disabled="vm.proyecto.id == null"></headeraccordion>
+				<files lista="vm.proyecto.archivos" idpadre="vm.proyecto.id" tipopadre="PROYECTO"></files>
+			</div>
+		</uib-accordion>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

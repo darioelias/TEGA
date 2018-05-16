@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-3">
+		<codefilter codigo="criterio.codigo"></codefilter>
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>					
+	</div>	
+
+
+	<div class="col-md-3">		
+		<filter valor="criterio.nombre" tr="proyectoApp.localidad.nombre" ></filter>
+		<selectentity destino="criterio.idProvincia" servicio="Provincia"
+					  tr="proyectoApp.localidad.provincia" retornarid="true" 
+					  campodetalle="nombre"></selectentity>	
+	</div>
+	
+	<ng-transclude></ng-transclude>
+
+</div>

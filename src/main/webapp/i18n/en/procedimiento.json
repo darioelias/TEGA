@@ -1,0 +1,38 @@
+{
+    "proyectoApp": {
+        "procedimiento" : {
+            "home": {
+                "title": "Procedures",
+                "createLabel": "Create a new Procedure",
+                "createOrEditLabel": "Create or edit a Procedure",
+                "search": "Search for Procedure"
+            },
+            "created": "A new Procedure is created with identifier {{ param }}",
+            "updated": "A Procedure is updated with identifier {{ param }}",
+            "deleted": "A Procedure is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Procedure {{ id }}?"
+            },
+            "detail": {
+                "title": "Procedure"
+            },
+            "nombre": "Name",
+			"deleteByIdIn": "The {{param}} Procedures were eliminated",
+			"chkExportar": "Exports",
+			"exportarGenotipos": "Genotypes (TEGA)",
+			"exportarGenotiposStructure": "Genotypes (Structure)",
+			"exportarGenotiposGenepop": "Genotypes (Genepop)",
+			"exportarMuestras": "Samples",
+			"exportarMuestrasAtributos": "Extra attrib. of Samples",
+			"exportarConjuntosMuestras": "Samples Sets",
+			"exportarConjuntosMuestrasAtributos": "Extra attrib. of Samples Sets",
+			"exportarLoci": "Loci",
+			"exportarLociAtributos": "Extra attrib. of Loci",
+			"exportarCantidades": "Quantities",
+            "detalle": "Detail",
+			"comandoEje": "Execution command",
+			"comandoLog": "Command to show the execution log",
+			"publico": "Public"
+        }
+    }
+}

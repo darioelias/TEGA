@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-primary" ng-click="actualizar()" >
+	<span class="glyphicon glyphicon-refresh"> </span>
+	<span class="hidden-xs hidden-sm" data-translate="general.actualizar"></span>
+</button>
+
+<button ng-if="importar" has-authority="ROLE_ABM" type="button" ng-click="importar()" 
+		class="btn btn-proceso"  >
+	<span class="glyphicon glyphicon-import"></span>
+	<span class="hidden-xs hidden-sm" data-translate="general.importar"></span>
+</button>
+
+<exportar lista="lista" titulo="{{titulo}}" campos="{{camposexp}}">
+</exportar>
+
+<button ng-if="expAtributos" type="button" ng-click="exportarAtributos()" 
+		class="btn btn-proceso"  >
+	<span class="glyphicon glyphicon-export"></span>
+	<span class="hidden-xs hidden-sm" data-translate="general.exportarAtributos"></span>
+</button>
+
+<eliminacionmasiva servicio="{{servicio}}" filtros="{{filtros}}" actualizar="actualizar"
+					tr="{{trsel}}" campoid="{{campoid}}" solodetalle="solodetalle" rol={{rol}}
+					campocodigo="{{campocodigo}}" campodetalle="{{campodetalle}}">
+</eliminacionmasiva>
+
+

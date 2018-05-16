@@ -1,0 +1,21 @@
+<div class="table-responsive table-scroll">
+    <table class="jh-table table table-striped">
+        <thead>
+            <tr jh-sort="predicado" ascending="ascendente">
+                <th jh-sort-by="atributo.codigo"><span data-translate="general.codigo"></span><span class="glyphicon glyphicon-sort"></th>
+				<th jh-sort-by="atributo.detalle"><span data-translate="general.detalle"></span><span class="glyphicon glyphicon-sort"></th>
+                <th jh-sort-by="valor"><span data-translate="general.valor"></span><span class="glyphicon glyphicon-sort"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="a in atributos | orderBy:predicado:!ascendente track by a.atributo.id">
+                <td><a ui-sref="atributo-detail({id:a.atributo.id})">{{a.atributo.codigo}}</a></td>
+                <td>{{a.atributo.detalle}}</td>
+				<td class="col-md-3">
+					<valordinamico valor="a.valor" tipo="a.atributo.tipo" 
+								   readonly="readonly"></valordinamico>
+			   </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+{
+    "proyectoApp": {
+        "procedimiento" : {
+            "home": {
+                "title": "Procedimientos",
+                "createLabel": "Crear nuevo Procedimiento",
+                "createOrEditLabel": "Crear o editar Procedimiento",
+                "search": "Buscar Procedimiento"
+            },
+            "created": "Un nuevo Procedimiento ha sido creada con el identificador {{ param }}",
+            "updated": "Un Procedimiento ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Un Procedimiento ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Procedimiento {{ id }}?"
+            },
+            "detail": {
+                "title": "Procedimiento"
+            },
+            "nombre": "Nombre",
+			"deleteByIdIn": "Se eliminaron los {{param}} Procedimientos",
+			"chkExportar": "Exportaciones",
+			"exportarGenotipos": "Genotipos (TEGA)",
+			"exportarGenotiposStructure": "Genotipos (Structure)",
+			"exportarGenotiposGenepop": "Genotipos (Genepop)",
+			"exportarMuestras": "Muestras",
+			"exportarMuestrasAtributos": "Atrib. extras de Muestras",
+			"exportarConjuntosMuestras": "Conjuntos de Muestras",
+			"exportarConjuntosMuestrasAtributos": "Atrib. extras de Conjuntos de Muestras",
+			"exportarLoci": "Loci",
+			"exportarLociAtributos": "Atrib. extras de Loci",
+			"exportarCantidades": "Cantidades",
+            "detalle": "Detalle",
+			"comandoEje": "Comando de ejecución",
+			"comandoLog": "Comando para mostrar el log de ejecución",
+			"publico": "Público"
+        }
+    }
+}

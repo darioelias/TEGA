@@ -1,0 +1,23 @@
+{
+    "proyectoApp": {
+        "tejido" : {
+            "home": {
+                "title": "Tejidos",
+                "createLabel": "Crear nuevo Tejido",
+                "createOrEditLabel": "Crear o editar Tejido",
+                "search": "Buscar Tejido"
+            },
+            "created": "Un nuevo Tejido ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tejido ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tejido ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Tejido {{ id }}?"
+            },
+            "detail": {
+                "title": "Tejido"
+            },
+            "nombre": "Nombre",
+			"deleteByIdIn": "Se eliminaron los {{param}} Tejidos"
+        }
+    }
+}

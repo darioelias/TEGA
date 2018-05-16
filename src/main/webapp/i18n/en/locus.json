@@ -1,0 +1,27 @@
+{
+    "proyectoApp": {
+        "locus" : {
+            "home": {
+                "title": "Loci",
+                "createLabel": "Create a new Locus",
+                "createOrEditLabel": "Create or edit a Locus",
+                "search": "Search for Locus"
+            },
+            "created": "A new Locus is created with identifier {{ param }}",
+            "updated": "A Locus is updated with identifier {{ param }}",
+            "deleted": "A Locus is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Locus {{ id }}?"
+            },
+            "detail": {
+                "title": "Locus"
+            },
+            "codigo": "Code",
+            "detalle": "Detail",
+            "ploidia": "Ploidy",
+			"analisisGenotipo":"Analysis of Genotypes",
+			"publico": "Public",
+			"deleteByIdIn": "The {{param}} Loci were eliminated"
+        }
+    }
+}

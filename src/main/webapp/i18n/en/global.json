@@ -1,0 +1,237 @@
+{
+    "global": {
+        "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+        "menu": {
+            "home": "Home",
+			"about": "About TEGA",
+            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            
+			"entidades-especificas": {
+                "main": "Entities Spec.",
+				"muestra": "Samples",
+				"muestras-map": "Samples Map",
+                "locus": "Loci",
+                "alelo": "Alleles",
+                "conjuntoMuestras": "Samples Sets"
+			},
+			
+			"entidades-generales": {
+                "main": "Entities Gral.",
+                "pais": "Countries",
+                "provincia": "Provinces",
+                "localidad": "Localities",
+                "region": "Regions",
+                "especie": "Species",
+                "institucion": "Institutions",
+                "profesional": "Professionals",
+                "tejido": "Tissues",
+                "modoRecoleccion": "Collection Methods",
+                "proyecto": "Projects",
+                "atributo": "Attributes",	
+                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+            },
+
+			"analisis": {
+                "main": "Analysis",
+				"analisisGenotipo": "Genotypes Analysis",
+				"categoriaParametroProcedimiento": "Categories of Parameters",
+				"procedimiento": "Procedures",
+				"parametroProcedimiento": "Parameters of Procedures"
+			},
+
+            "account": {
+                "main": "Account",
+                "settings": "Settings",
+                "password": "Password",
+                "sessions": "Sessions",
+                "login": "Sign in",
+                "logout": "Sign out",
+                "register": "Register"
+            },
+            "admin": {
+                "main": "Administration",
+                "userManagement": "User management",
+                "tracker": "User tracker",
+                "metrics": "Metrics",
+                "health": "Health",
+                "configuration": "Configuration",
+                "logs": "Logs",
+                "audits": "Audits",
+                "apidocs": "API",
+                "database": "Database",
+				"parametroTega": "TEGA parameters",
+				"backup": "Backup",
+                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+            },
+            "language": "Language"
+        },
+        "form": {
+            "username": "Username",
+            "username.placeholder": "Your username",
+            "newpassword": "New password",
+            "newpassword.placeholder": "New password",
+            "confirmpassword": "New password confirmation",
+            "confirmpassword.placeholder": "Confirm the new password",
+            "email": "E-mail",
+            "email.placeholder": "Your e-mail"
+        },
+        "messages": {
+            "info": {
+                "authenticated": "If you want to <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
+                "register": "You don't have an account yet? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Register a new account</a>"
+            },
+            "error": {
+                "dontmatch": "The password and its confirmation do not match!"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "Your password is required.",
+                    "minlength": "Your password is required to be at least 4 characters.",
+                    "maxlength": "Your password cannot be longer than 50 characters.",
+                    "strength": "Password strength:"
+                },
+                "confirmpassword": {
+                    "required": "Your confirmation password is required.",
+                    "minlength": "Your confirmation password is required to be at least 4 characters.",
+                    "maxlength": "Your confirmation password cannot be longer than 50 characters."
+                },
+                "email": {
+                    "required": "Your e-mail is required.",
+                    "invalid": "Your e-mail is invalid.",
+                    "minlength": "Your e-mail is required to be at least 5 characters.",
+                    "maxlength": "Your e-mail cannot be longer than 50 characters."
+                }
+            }
+        },
+        "field": {
+            "id": "ID"
+        },
+        "ribbon": {
+            "dev":"Development"
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "Add blob",
+            "addimage": "Add image",
+            "back": "Back",
+            "cancel": "Cancel",
+            "delete": "Delete",
+            "edit": "Edit",
+            "open": "Open",
+            "save": "Save",
+            "view": "View",
+			"seleccionar": "Select",
+            "accept": "Accept"
+        },
+        "detail": {
+            "field": "Field",
+            "value": "Value"
+        },
+        "delete": {
+            "title": "Confirm delete operation",
+			"eliminacionMasiva": "Are you sure you want to delete the {{cant}} selected items?"
+        },
+        "validation": {
+            "required": "This field is required.",
+            "minlength": "This field is required to be at least {{ min }} characters.",
+            "maxlength": "This field cannot be longer than {{ max }} characters.",
+            "min": "This field should be more than {{ min }}.",
+            "max": "This field cannot be more than {{ max }}.",
+            "minbytes": "This field should be more than {{ min }} bytes.",
+            "maxbytes": "This field cannot be more than {{ max }} bytes.",
+            "pattern": "This field should follow pattern {{ pattern }}.",
+            "number": "This field should be a number.",
+            "datetimelocal": "This field should be a date and time."
+        }
+    },
+    "error": {
+        "server.not.reachable": "Server not reachable",
+        "url.not.found": "Not found",
+        "NotNull": "Field {{ fieldName }} cannot be empty!",
+        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
+        "userexists": "Login name already used!",
+        "emailexists": "E-mail is already in use!",
+        "idexists": "A new {{ entityName }} cannot already have an ID",
+		"codigo-repetido": "The Code is already used",
+		"upload-archivo": "There was an error uploading the file",
+		"download-archivo": "There was an error downloading the file",
+		"privacidad": "The user does not have the permissions to access the data",
+		"sinProcedimientoEjec": "There are no Procedures in execution in the indicated Analysis"
+    },
+    "footer": "This is your footer",
+
+	"general" : {
+            "id": "ID",
+            "codigo": "Code",
+            "detalle": "Detail",
+    		"nombre": "Name",
+			"cantidad": "Total",
+			"valor": "Value",
+			"estado": "State",
+			"atributos": "Attributes",
+
+			"archivos": "Files",
+			"archivo": "File",
+			"tipoArchivo": "File Type",  
+			"enviar-archivo": "Upload File",   
+
+			"desde": "From",
+			"hasta": "To",
+
+			"archivo-obligatorio": "You must indicate a File",  
+			"archivo-repetido": "A file with the same name already exists",    
+			"tipoArchivo-obligatorio": "You must indicate a File Type",
+			"separador-obligatorio": "You must indicate a Separator",
+			"tipo-obligatorio": "You must indicate a Type",
+
+			"separador":"Separator",
+
+			"filas-pagina": "Rows per Page",
+
+			"busquedaItems": "Selection of",  
+
+			"enviar": "Submit", 
+	   		"importando-archivo": "Importing File",
+			"archivo-importado": "Imported File",
+			"publico": "Public",
+
+			"buscar": "Search",
+			"tipo": "Type",
+
+			"importar": "Import",
+			"exportar": "Export",
+			"exportarAtributos": "Exp. Attributes",
+			"actualizar": "Refresh"
+        },
+
+	"enum": {
+		"Tipo" : {
+            "null": "",
+            "NUMERICO": "Numeric",
+            "ENTERO": "Integer",
+            "CARACTER": "Character",
+            "LOGICO": "Logic",
+            "FECHA": "Date"
+        },
+		"Logico" : {
+            "null": "",
+            "NO": "No",
+            "SI": "Yes"
+        },
+		"EstadoAnalisisGenotipo":{
+            "null": "",
+			"DISPONIBLE": "Available",
+			"EJECUTANDO": "Executing"
+		},
+		"Entidad":{
+            "null": "",
+			"MUESTRA": "Sample",
+			"PROYECTO": "Project",
+			"LOCUS": "Locus",
+			"CONJUNTO_MUESTRAS": "Samples Set",
+			"ANALISIS_GENOTIPO": "Genotypes Analysis"
+		}
+
+    }
+}

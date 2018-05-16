@@ -1,0 +1,61 @@
+<div class="form-group">
+	<div class="row" >
+			
+		<div class="form-inline">		
+			<div class="col-sm-6 col-md-8">		
+				<label for="filtro" data-translate="general.buscar"></label>
+				<input type="text" class="form-control" name="filtro" id="filtro" ng-model="filtro" ng-change="filtrar(filtro)"/>		
+			</div>
+			<div class="col-sm-4 col-md-4">	
+				<button ng-if="!readonly && !noupload" type="button" class="btn btn-default pull-right" 
+						ng-click="upload()" has-authority="ROLE_ABM">
+					<span class="glyphicon glyphicon-upload"></span>
+				</button>
+			</div>	
+		</div>
+
+	</div>
+	<jhi-alert-error></jhi-alert-error>	
+	<div class="table-responsive table-scroll-items">
+		<table class="table table-striped">
+			<thead>
+				<tr jh-sort="predicado" ascending="ascendente" funcionextra="vm.setOrden">
+					<th jh-sort-by="id" has-authority="ROLE_ABM"><span data-translate="general.id"></span><span class="glyphicon glyphicon-sort"></th>
+					<th jh-sort-by="nombre" ><span data-translate="general.nombre"></span><span class="glyphicon glyphicon-sort"></th>
+					<th jh-sort-by="detalle"><span data-translate="general.detalle"></span><span class="glyphicon glyphicon-sort"></th>
+					<th jh-sort-by="publico" has-authority="ROLE_ABM"><span data-translate="general.publico"></span><span class="glyphicon glyphicon-sort"></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="ele in lista | orderBy:setAtributoOrden:!ascendente | filtroarchivos track by ele.id ">
+					<td has-authority="ROLE_ABM">{{ele.id}}</td>
+					<td>{{getNombreArchivo(ele)}}</td>
+					<td>
+						<input ng-if="!readonly" type="text" class="form-control" 
+								ng-model="ele.detalle"  />
+						<span ng-if="readonly">{{ele.detalle}}</span>
+					</td>	
+					<td has-authority="ROLE_ABM">
+						<input ng-disabled="readonly" type="checkbox" ng-model="ele.publico"/>
+					</td>
+					<td class="text-right">
+						<div class="btn-group flex-btn-group-container">
+							<button ng-click="eliminar(ele)"
+									type="button"
+						            class="btn btn-danger btn-sm"
+									ng-hide="readonly">
+						        <span class="glyphicon glyphicon-remove-circle"></span>
+						        <span class="hidden-xs hidden-sm"></span>
+						    </button>
+							<button type="button" class="btn btn-default" ng-click="download(ele)">
+								<span class="glyphicon glyphicon-download"></span>
+							</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

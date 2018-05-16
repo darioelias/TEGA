@@ -1,0 +1,41 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.alelo.detail.title">Alelo</span> {{vm.alelo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="proyectoApp.alelo.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.alelo.valor}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.alelo.indice">Indice</span></dt>
+        <dd>
+            <span>{{vm.alelo.indice}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.alelo.locus">Locus</span></dt>
+        <dd>
+            <a ui-sref="locus-detail({id:vm.alelo.locus.id})">{{vm.alelo.locus.codigo}} - {{vm.alelo.locus.detalle}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.alelo.muestra">Muestra</span></dt>
+        <dd>
+            <a ui-sref="muestra-detail({id:vm.alelo.muestra.id})">{{vm.alelo.muestra.codigoInterno}} - {{vm.alelo.muestra.detalle}}</a>
+        </dd>
+        <dt has-authority="ROLE_ABM"><span data-translate="proyectoApp.alelo.publico">Publico</span></dt>
+        <dd has-authority="ROLE_ABM">
+            <input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.alelo.publico" disabled/>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()"
+			class="btn btn-primary" has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

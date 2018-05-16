@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.conjuntoMuestras.detail.title"></span> {{vm.conjuntoMuestras.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="proyectoApp.conjuntoMuestras.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{vm.conjuntoMuestras.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.conjuntoMuestras.detalle">Detalle</span></dt>
+        <dd>
+            <span>{{vm.conjuntoMuestras.detalle}}</span>
+        </dd>
+        <dt has-authority="ROLE_ABM"><span data-translate="proyectoApp.conjuntoMuestras.publico">Publico</span></dt>
+        <dd has-authority="ROLE_ABM">
+            <input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.conjuntoMuestras.publico" disabled/>
+        </dd>
+    </dl>
+
+	<uib-accordion close-others="oneAtATime">
+		<div uib-accordion-group class="panel-default">	
+			<headeraccordion tr="proyectoApp.conjuntoMuestras.muestras"></headeraccordion>
+			<items listadestino="vm.conjuntoMuestras.muestras" tr="proyectoApp.conjuntoMuestras.muestra" readonly="true" campocodigo="codigoInterno"></items>
+		</div>	
+		<div uib-accordion-group class="panel-default" >	
+			<headeraccordion tr="general.atributos" ></headeraccordion>
+			<atributogrilla atributos="vm.conjuntoMuestras.atributos" idobj="vm.conjuntoMuestras.id" 
+							servicio="ConjuntoMuestras" entidad="CONJUNTO_MUESTRAS" readonly="true" padre="vm.conjuntoMuestras"> </atributogrilla>
+		</div>
+	</uib-accordion>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()"
+			class="btn btn-primary"
+			has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

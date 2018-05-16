@@ -1,0 +1,72 @@
+<div class="row">
+	<div class="col-md-3">
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>	
+
+		<div class="form-group" has-authority="ROLE_ABM">
+			<label class="control-label" data-translate="proyectoApp.muestra.publico" for="publico"></label>
+			<select class="form-control" name="publico" ng-model="criterio.publico" id="publico" ng-change="cambioPublico()">
+				<option value=""></option>
+			    <option value="true" data-translate="enum.Logico.SI"></option>
+			    <option value="false" data-translate="enum.Logico.NO"></option>
+			</select>
+		</div>
+	</div>	
+
+	<div class="col-md-3">
+		<codefilter codigo="criterio.codigoInterno" tr="proyectoApp.muestra.codigoInterno"></codefilter>
+		<codefilter codigo="criterio.codigoExterno" tr="proyectoApp.muestra.codigoExterno"></codefilter>				
+	</div>
+
+	<div class="col-md-3">
+		
+		<selectentity destino="criterio.idConjuntoMuestras" servicio="ConjuntoMuestras" has-authority="ROLE_USER_EXTENDED"
+					  tr="proyectoApp.muestra.conjuntoMuestras" retornarid="true"></selectentity>
+
+		<selectentity destino="criterio.idRegion" servicio="Region" 
+					  tr="proyectoApp.muestra.region" retornarid="true" campodetalle="nombre"></selectentity>						
+	</div>
+
+	<div class="col-md-3">	
+		<selectentity destino="criterio.idLocalidad" servicio="Localidad" 
+					  tr="proyectoApp.muestra.localidad" retornarid="true" campodetalle="nombre"></selectentity>		
+				
+		<div class="form-group">
+			<label class="control-label" data-translate="proyectoApp.muestra.ubicacion" for="ubicacion"></label>
+			<input id="ubicacion" type="text" class="form-control" name="ubicacion"  ng-model="criterio.ubicacion"/>				   
+		</div>	
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<datefilter desde="criterio.desdeRecoleccion" trdesde="proyectoApp.muestra.desdeRecoleccion"
+					hasta="criterio.hastaRecoleccion" trhasta="proyectoApp.muestra.hastaRecoleccion"></datefilter>	
+	</div>
+
+	<div class="col-md-3">
+		<selectentity destino="criterio.idInstitucion" servicio="Institucion" 
+					  tr="proyectoApp.muestra.institucion" retornarid="true" campodetalle="nombre"></selectentity>	
+			
+		<selectentity destino="criterio.idProyecto" servicio="Proyecto"
+					  tr="proyectoApp.muestra.proyecto" retornarid="true"></selectentity>		
+	</div>
+
+	<div class="col-md-3">
+		<selectentity destino="criterio.idEspecie" servicio="Especie" 
+					  tr="proyectoApp.muestra.especie" retornarid="true" campodetalle="nombre"></selectentity>	
+		
+		<selectentity destino="criterio.idProfesional" servicio="Profesional" has-authority="ROLE_ABM"
+					  tr="proyectoApp.muestra.profesional" retornarid="true" campodetalle="nombre"></selectentity>	
+	</div>
+
+
+	<div class="col-md-3">
+	
+
+	</div>
+
+
+</div>
+
+	
+<ng-transclude></ng-transclude>
+

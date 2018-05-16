@@ -1,0 +1,88 @@
+{
+    "proyectoApp": {
+        "muestra" : {
+            "home": {
+                "title": "Samples",
+                "createLabel": "Create a new Sample",
+                "createOrEditLabel": "Create or edit a Sample",
+                "search": "Search for Sample",
+				"map": "Samples Map"
+            },
+            "created": "A new Sample is created with identifier {{ param }}",
+            "updated": "A Sample is updated with identifier {{ param }}",
+            "deleted": "A Sample is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sample {{ id }}?"
+            },
+            "detail": {
+                "title": "Sample"
+            },
+            "fecha": "Date",
+            "peso": "Weight",
+            "largo": "Length",
+            "codigoInterno": "Internal Code",
+            "codigoExterno": "External Code",
+            "sexo": "Sex",
+            "temperaturaAmbiente": "Environment Temperature",
+            "conductividadAmbiente": "Environment Conductivity",
+            "altura": "Altitude",
+            "latitud": "Latitude",
+            "longitud": "Longitude",
+            "ubicacion": "Location",
+            "detalle": "Detail",
+            "region": "Region",
+            "localidad": "Locality",
+            "profesional": "Professional",
+            "institucion": "Institution",
+            "especie": "Species",
+            "tejido": "Tissue",
+            "modoRecoleccion": "Collection Method",
+			"conjuntoMuestras": "Samples Set",
+			"fechaRecoleccion": "Collection Date",
+			"desdeRecoleccion":"Collection Since",
+			"hastaRecoleccion":"Collection Until",
+			"proyecto": "Project",
+			"proyectos": "Projects",
+			"publico": "Public",
+			"alelos":"Alleles",
+			"conjuntosMuestras": "Samples Sets",
+			"deleteByIdIn": "The {{param}} Samples were eliminated",
+
+        	"importacion" : {
+				"titulo":"Samples Import",
+
+				"muestrasCreadas":"Created Samples",
+				"muestrasModificadas": "Modified Samples",
+				"muestrasCreadas":"Created Samples",
+				"muestrasModificadas": "Modified Samples",
+				"proyectosCreados": "Created Projects",
+				"regionesCreadas": "Created Regions",
+				"especiesCreadas": "Created Species",
+				"localidadesCreadas": "Created Localities",
+				"provinciasCreadas": "Created Provinces",
+				"paisesCreados": "Created Countries",
+				"profesionalesCreados": "Created Professionals",
+				"institucionesCreadas": "Created Institutions",
+				"tejidosCreados": "Created Tissues",
+				"modosRecoleccionCreados": "Created Collection Methods",
+				"conjuntoMuestrasCreados": "Created Samples Sets",
+
+				"conjuntosMuestrasNoIdentificados": "Unidentified Sets",
+				"muestrasNoIdentificadas": "Unidentified Samples",
+				"atributosNoIdentificados": "Unidentified Attributes",
+				"atributosInvalidos": "Invalid Values (Attrib./Row)",
+				"atributosValidos": "Valid Values",
+				"muestrasProcesadas": "Processed Samples",
+
+				"datosAImportar": "Data to import",
+				"MUESTRAS": "Samples",
+				"ATRIBUTOS": "Extra attributes of Samples",
+				"datosAImportar-obligatorio": "You must indicate the data to import",
+
+				"error":{
+					"sinCampoDeMuestra":"The identifier field of the Samples was not found"
+				}
+			}
+        }
+    }
+}

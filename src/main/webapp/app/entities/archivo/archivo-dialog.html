@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myArchivoLabel" data-translate="proyectoApp.archivo.home.createOrEditLabel">Create or edit a Archivo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.archivo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.archivo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.archivo.detalle" for="field_detalle">Detalle</label>
+            <input type="text" class="form-control" name="detalle" id="field_detalle"
+                    ng-model="vm.archivo.detalle"
+                    required />
+            <div ng-show="editForm.detalle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.detalle.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.archivo.direccion" for="field_direccion">Direccion</label>
+            <input type="text" class="form-control" name="direccion" id="field_direccion"
+                    ng-model="vm.archivo.direccion"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="proyectoApp.archivo.muestra" for="field_muestra">Muestra</label>
+            <select class="form-control" id="field_muestra" name="muestra" ng-model="vm.archivo.muestra" ng-options="muestra as muestra.id for muestra in vm.muestras track by muestra.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="proyectoApp.archivo.extraccion" for="field_extraccion">Extraccion</label>
+            <select class="form-control" id="field_extraccion" name="extraccion" ng-model="vm.archivo.extraccion" ng-options="extraccion as extraccion.id for extraccion in vm.extraccions track by extraccion.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="proyectoApp.archivo.tipoArchivo" for="field_tipoArchivo">Tipo Archivo</label>
+            <select class="form-control" id="field_tipoArchivo" name="tipoArchivo" ng-model="vm.archivo.tipoArchivo" ng-options="tipoArchivo as tipoArchivo.id for tipoArchivo in vm.tipoarchivos track by tipoArchivo.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="proyectoApp.archivo.analisisGenotipo" for="field_analisisGenotipo">Analisis Genotipo</label>
+            <select class="form-control" id="field_analisisGenotipo" name="analisisGenotipo" ng-model="vm.archivo.analisisGenotipo" ng-options="analisisGenotipo as analisisGenotipo.id for analisisGenotipo in vm.analisisgenotipos track by analisisGenotipo.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="proyectoApp.archivo.proyecto" for="field_proyecto">Proyecto</label>
+            <select class="form-control" id="field_proyecto" name="proyecto" ng-model="vm.archivo.proyecto" ng-options="proyecto as proyecto.id for proyecto in vm.proyectos track by proyecto.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

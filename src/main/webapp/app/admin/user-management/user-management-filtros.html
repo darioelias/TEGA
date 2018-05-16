@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-md-3">		
+		<filter valor="criterio.login" tr="userManagement.login" ></filter>
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>			
+	</div>
+
+	<div class="col-md-3">		
+		<filter valor="criterio.firstName" tr="userManagement.firstName" ></filter>
+		<filter valor="criterio.lastName" tr="userManagement.lastName"></filter>			
+	</div>
+
+	<div class="col-md-3">		
+		<filter valor="criterio.email" tr="userManagement.email" ></filter>
+		<div class="form-group">
+		    <label class="control-label" data-translate="userManagement.activated" ></label>
+		    <select class="form-control" ng-model="criterio.activated"  ng-change="cambioActivated()">
+				<option value=""></option>
+		        <option value="true" data-translate="enum.Logico.SI"></option>
+		        <option value="false" data-translate="enum.Logico.NO"></option>
+			</select>
+		</div>		
+	</div>
+
+	<div class="col-md-3">		
+		<div class="form-group">
+		    <label class="control-label" data-translate="userManagement.rolUsuario" for="rolUsuario"></label>
+		    <select class="form-control" name="rolUsuario" ng-model="criterio.rolUsuario" id="rolUsuario" ng-change="cambioRolUsuario()">
+				<option value=""></option>
+		        <option value="IMPLEMENTADOR" data-translate="userManagement.RolUsuario.IMPLEMENTADOR" ></option>
+		        <option value="ADMINISTRADOR" data-translate="userManagement.RolUsuario.ADMINISTRADOR"></option>
+		        <option value="INVESTIGADOR" data-translate="userManagement.RolUsuario.INVESTIGADOR"></option>
+		        <option value="INVITADO" data-translate="userManagement.RolUsuario.INVITADO"></option>
+		        <option value="ANONIMO" data-translate="userManagement.RolUsuario.ANONIMO"></option>
+		    </select>
+		</div>
+	</div>
+
+	<ng-transclude></ng-transclude>
+</div>

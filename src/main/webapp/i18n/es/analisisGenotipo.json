@@ -1,0 +1,70 @@
+{
+    "proyectoApp": {
+        "analisisGenotipo" : {
+            "home": {
+                "title": "Análisis de Genotipos",
+                "createLabel": "Crear nuevo Análisis de Genotipos",
+                "createOrEditLabel": "Crear o editar Análisis de Genotipos",
+                "search": "Buscar Análisis de Genotipos",
+				"alelos": "Análisis de Genotipos - Alelos: "
+
+            },
+            "created": "Un nuevo Análisis de Genotipos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Análisis de Genotipos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Análisis de Genotipos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Análisis de Genotipos {{ id }}?"
+            },
+            "detail": {
+                "title": "Análisis de Genotipos"
+            },
+            "codigo": "Código",
+            "detalle": "Detalle",
+            "fecha": "Fecha",
+            "archivos": "Archivos",
+            "locus": "Locus",
+			"loci": "Loci",
+            "conjuntosMuestras": "Conjuntos de Muestras",
+			"conjuntoMuestras": "Conjunto de Muestras",
+            "proyecto": "Proyecto",
+			"muestra": "Muestra",
+			"alelos": "Alelos",
+			"publico": "Público",
+			"procedimiento": "Procedimiento",
+			"procedimientoEje": "Procedimiento en ejecución",
+			"ejecuciones": "Resultados de procedimientos",
+			"parametros": "Parámetros",
+			"ejecutandoParentesis": "(en ejecución)",
+			"alelos-importar-exportar": {
+				"nulo": "Valor Nulo",
+				"contenido": "Contenido",
+				"tituloImpExp": "Importar/Exportar Alelos",
+				"tituloExp": "Exportar Alelos",
+				"conNombres": "Con nombres"
+			},
+			"error":{
+				"no-disponible":"El Análisis de Genotipos no se encuentra Disponible",
+				"no-ejecucion":"El Análisis de Genotipos no se encuentra en Ejecución",
+				"sin-loci": "El Análisis de Genotipos no tiene Loci",
+				"sin-conjuntos-muestras": "El Análisis de Genotipos no tiene Conjuntos de Muestras",
+				"conjuntos-muestras-vacio": "El Análisis de Genotipos tiene Conjuntos de Muestras vacios",
+				"sin-procedimientos":"No hay Procedimientos cargados en la plataforma"
+			},
+			"deleteByIdIn": "Se eliminaron los {{param}} Análisis de Genotipos",
+			"proc":{
+				"titulo": "Ejecución de Procedimientos, Análisis de Genotipos: ",
+				"abreviacion": "Proc.",
+				"noEjecutar": "Solo generar archivos de entrada",
+				"parametros": "Parámetros",
+				"envio": "Se inició la ejecución de {{nomProc}} para el Análisis de Genotipos: {{codAnalisis}}",
+				"tituloPregunta": "Confirmar ejecución de procedimiento",
+				"pregunta": "¿Seguro que quiere ejecutar {{nomProc}} para el Análisis de Genotipos: {{codAnalisis}}?",
+				"sinParametros": "Este procedimiento no tiene Párametros editables."
+			},
+			"verLog":{
+				"titulo": "Log de ejecución, Análisis de Genotipos: ",
+				"log": "Log"
+			}
+        }
+    }
+}

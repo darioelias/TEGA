@@ -1,0 +1,49 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.proyecto.detail.title">Proyecto</span> {{vm.proyecto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="proyectoApp.proyecto.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{vm.proyecto.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.proyecto.fecha">Fecha</span></dt>
+        <dd>
+            <span>{{vm.proyecto.fecha | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.proyecto.detalle">Detalle</span></dt>
+        <dd>
+            <span>{{vm.proyecto.detalle}}</span>
+        </dd>
+        <dt has-authority="ROLE_ABM"><span data-translate="proyectoApp.proyecto.publico">Publico</span></dt>
+        <dd has-authority="ROLE_ABM">
+            <input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.proyecto.publico" disabled/>
+        </dd>
+    </dl>
+
+	<uib-accordion close-others="oneAtATime">
+		<div uib-accordion-group class="panel-default" >	
+			<headeraccordion tr="general.atributos" ></headeraccordion>
+			<atributogrilla atributos="vm.proyecto.atributos" idobj="vm.proyecto.id" 
+							servicio="Proyecto" entidad="PROYECTO" readonly="true" padre="vm.proyecto"> </atributogrilla>
+		</div>
+		<div uib-accordion-group class="panel-default">	
+			<headeraccordion tr="general.archivos"></headeraccordion>
+			<files lista="vm.proyecto.archivos" readonly="true"></files>
+		</div>
+	</uib-accordion>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ng-click="vm.editar()"
+			class="btn btn-primary" has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

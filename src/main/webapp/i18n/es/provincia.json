@@ -1,0 +1,24 @@
+{
+    "proyectoApp": {
+        "provincia" : {
+            "home": {
+                "title": "Provincias",
+                "createLabel": "Crear nueva Provincia",
+                "createOrEditLabel": "Crear o editar Provincia",
+                "search": "Buscar Provincia"
+            },
+            "created": "Una nueva Provincia ha sido creada con el identificador {{ param }}",
+            "updated": "Una Provincia ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Provincia ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Provincia {{ id }}?"
+            },
+            "detail": {
+                "title": "Provincia"
+            },
+            "nombre": "Nombre",
+            "pais": "Pais",
+			"deleteByIdIn": "Se eliminaron las {{param}} Provincias"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "proyectoApp": {
+        "especie" : {
+            "home": {
+                "title": "Especies",
+                "createLabel": "Crear nueva Especie",
+                "createOrEditLabel": "Crear o editar Especie",
+                "search": "Buscar Especie"
+            },
+            "created": "Una nueva Especie ha sido creada con el identificador {{ param }}",
+            "updated": "Una Especie ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Especie ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Especie {{ id }}?"
+            },
+            "detail": {
+                "title": "Especie"
+            },
+            "nombre": "Nombre",
+            "taxonomia": "Taxonomía",
+			"deleteByIdIn": "Se eliminaron las {{param}} Especies"
+        }
+    }
+}

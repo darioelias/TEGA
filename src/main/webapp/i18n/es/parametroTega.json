@@ -1,0 +1,27 @@
+{
+    "proyectoApp": {
+        "parametroTega" : {
+            "home": {
+                "title": "Parámetros de TEGA",
+                "createLabel": "Crear nuevo Parámetro de TEGA",
+                "createOrEditLabel": "Crear o editar Parámetro de TEGA",
+                "search": "Buscar Parámetro de TEGA"
+            },
+            "created": "Un nuevo Parámetro de TEGA ha sido creado con el identificador {{ param }}",
+            "updated": "Un Parámetro de TEGA ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Parámetro de TEGA ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Parámetro de TEGA {{ id }}?"
+            },
+            "detail": {
+                "title": "Parámetro de TEGA"
+            },
+			"codigo":"Código",
+            "detalle": "Detalle",
+			"valor": "Valor",
+			"tipo": "Tipo",
+			"publico": "Público",
+			"deleteByIdIn": "Se eliminaron los {{param}} Parámetros de TEGA"
+        }
+    }
+}

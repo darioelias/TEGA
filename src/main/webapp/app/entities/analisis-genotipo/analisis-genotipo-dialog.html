@@ -1,0 +1,140 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAnalisisGenotipoLabel" data-translate="proyectoApp.analisisGenotipo.home.createOrEditLabel">Create or edit a Analisis Genotipo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+
+		<div class="row">
+			<div class="col-md-3" ng-if="vm.analisisGenotipo.id">
+				<div class="form-group" ng-show="vm.analisisGenotipo.id">
+				    <label for="id" data-translate="global.field.id">ID</label>
+				    <input type="text" class="form-control" id="id" name="id"
+				            ng-model="vm.analisisGenotipo.id" readonly />
+				</div>
+				<div class="form-group" ng-if="vm.analisisGenotipo.id">
+				    <label class="control-label" data-translate="general.estado" for="estado"></label>
+					<span name="estado" id="estado" data-translate="{{'enum.EstadoAnalisisGenotipo.'+vm.analisisGenotipo.estado}}"></span>   
+					<span>{{vm.detalleEjecucion(vm.analisisGenotipo)}}</span>            
+				</div>
+			</div>
+			<div class="col-md-3">		
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.analisisGenotipo.codigo" for="field_codigo">Código</label>
+				    <input type="text" class="form-control" name="codigo" id="field_codigo"
+				            ng-model="vm.analisisGenotipo.codigo"
+				            required />
+				    <div ng-show="editForm.detalle.$invalid">
+				        <p class="help-block"
+				            ng-show="editForm.codigo.$error.required" data-translate="entity.validation.required">
+				            This field is required.
+				        </p>
+				    </div>
+				</div>	
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.analisisGenotipo.publico" for="field_publico">Publico</label>
+					<input id="field_publico" name="field_publico" type="checkbox" 
+							ng-model="vm.analisisGenotipo.publico"/>
+				</div>		
+			</div>
+			<div class="col-md-3">
+				<selectentity destino="vm.analisisGenotipo.proyecto" opcional="false"
+				      tr="proyectoApp.analisisGenotipo.proyecto" servicio="Proyecto"></selectentity>				
+			</div>
+			<div class="col-md-3">
+				<inputdate valor="vm.analisisGenotipo.fecha" tr="proyectoApp.analisisGenotipo.fecha"> </inputdate>
+			</div>
+		</div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.analisisGenotipo.detalle" for="field_detalle">Detalle</label>
+            <input type="text" class="form-control" name="detalle" id="field_detalle"
+                    ng-model="vm.analisisGenotipo.detalle"
+                    required />
+            <div ng-show="editForm.detalle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.detalle.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+		<uib-accordion close-others="oneAtATime">
+			<div uib-accordion-group class="panel-default">	
+				<headeraccordion tr="proyectoApp.analisisGenotipo.loci"></headeraccordion>
+				<items 	listadestino="vm.analisisGenotipo.loci" 
+					   	tr="proyectoApp.analisisGenotipo.locus" 
+						servicio="Locus" filtros="locusfiltros"></items>
+			</div>
+			<div uib-accordion-group class="panel-default">	
+				<headeraccordion tr="proyectoApp.analisisGenotipo.conjuntosMuestras"></headeraccordion>
+				<items listadestino="vm.analisisGenotipo.conjuntosMuestras" 
+					   tr="proyectoApp.analisisGenotipo.conjuntoMuestras"
+					   servicio="ConjuntoMuestras" filtros="conjuntomuestrasfiltros" ></items>
+    		</div>
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="general.atributos" ></headeraccordion>
+				<atributogrilla atributos="vm.analisisGenotipo.atributos" idobj="vm.analisisGenotipo.id" 
+								servicio="AnalisisGenotipo" entidad="ANALISIS_GENOTIPO"> </atributogrilla>
+			</div>
+			<div uib-accordion-group class="panel-default" is-disabled="vm.analisisGenotipo.id == null">	
+				<headeraccordion tr="proyectoApp.analisisGenotipo.archivos" disabled="vm.analisisGenotipo.id == null"></headeraccordion>
+				<files lista="vm.analisisGenotipo.archivos" idpadre="vm.analisisGenotipo.id" tipopadre="ANALISIS_GENOTIPO" readonly="false"></files>
+			</div>
+
+			<div uib-accordion-group class="panel-default" is-disabled="vm.analisisGenotipo.id == null" class="table-scroll-items">	
+				<headeraccordion tr="proyectoApp.analisisGenotipo.ejecuciones" disabled="vm.analisisGenotipo.id == null"></headeraccordion>
+				<div class="accordion-scroll-items">
+					<uib-accordion close-others="oneAtATime" >
+
+						<div uib-accordion-group class="panel-default" 
+							 ng-repeat="e in vm.analisisGenotipo.ejecuciones track by e.id"
+							 ng-click="vm.cargarEjecucion(e)">	
+							<uib-accordion-heading>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 vcenter">
+										<a><label>{{e.procedimiento.nombre}}&nbsp;-&nbsp;{{e.id}}</label></a>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<button ng-click="$event.stopPropagation();$event.preventDefault();vm.eliminarEjecucion(e)"
+						                        class="btn btn-danger btn-sm pull-right">
+						                    <span class="glyphicon glyphicon-remove-circle"></span>
+						                </button>
+									</div>
+								</div>
+							</uib-accordion-heading>
+							<uib-accordion close-others="oneAtATime">
+								<div uib-accordion-group class="panel-default">	
+									<headeraccordion tr="proyectoApp.analisisGenotipo.archivos" ></headeraccordion>
+									<files lista="e.archivos" noupload="true"></files>
+								</div>
+								<div uib-accordion-group class="panel-default">	
+									<headeraccordion tr="proyectoApp.analisisGenotipo.parametros" ></headeraccordion>
+									<div uib-accordion-group class="panel-default" 
+										 ng-repeat="c in e.categorias track by c.id">	
+										<uib-accordion-heading>
+											<a><label>{{c.nombre}}</label></a>
+										</uib-accordion-heading>
+										<parametroprocedimientogrilla parametros="c.parametros" readonly="true"></parametroprocedimientogrilla>
+									</div>
+								</div>
+							</uib-accordion>
+						</div>
+
+					</uib-accordion>
+				</div>
+    		</div>
+
+		</uib-accordion>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

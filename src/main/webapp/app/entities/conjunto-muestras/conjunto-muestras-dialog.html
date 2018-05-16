@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myconjuntoMuestrasLabel" data-translate="proyectoApp.conjuntoMuestras.home.createOrEditLabel">Create or edit a conjuntoMuestras</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.conjuntoMuestras.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.conjuntoMuestras.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.conjuntoMuestras.codigo" for="field_codigo">Codigo</label>
+            <input type="text" class="form-control" name="codigo" id="field_codigo"
+                    ng-model="vm.conjuntoMuestras.codigo"
+                    required />
+            <div ng-show="editForm.codigo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.codigo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.conjuntoMuestras.publico" for="field_publico">Publico</label>
+			<input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.conjuntoMuestras.publico"/>
+		</div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.conjuntoMuestras.detalle" for="field_detalle">Detalle</label>
+            <input type="text" class="form-control" name="detalle" id="field_detalle"
+                    ng-model="vm.conjuntoMuestras.detalle"
+                     />
+        </div>
+
+		<uib-accordion close-others="oneAtATime">
+			<div uib-accordion-group class="panel-default">	
+				<headeraccordion tr="proyectoApp.conjuntoMuestras.muestras"></headeraccordion>
+				<items listadestino="vm.conjuntoMuestras.muestras" servicio="Muestra" filtros="muestrafiltros"
+						tr="proyectoApp.conjuntoMuestras.muestra" campocodigo="codigoInterno"></items>
+			</div>	
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="general.atributos" ></headeraccordion>
+				<atributogrilla atributos="vm.conjuntoMuestras.atributos" idobj="vm.conjuntoMuestras.id" 
+								servicio="ConjuntoMuestras" entidad="CONJUNTO_MUESTRAS"> </atributogrilla>
+			</div>
+		</uib-accordion>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

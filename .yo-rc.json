@@ -1,0 +1,10 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.10.0",
+    "baseName": "tega",
+    "languages": [
+      "es",
+      "en"
+    ]
+  }
+}

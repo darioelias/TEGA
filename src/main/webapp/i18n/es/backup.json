@@ -1,0 +1,13 @@
+{
+	"backup":{
+		"titulo": "Copia de seguridad",
+		"generando": "Generando copia de seguridad",
+		"generar": "Generar",
+		"error": "Ocurrió un error al generar la copia de seguridad",
+		"error-descarga": "No se encontró la copia de seguridad generada",
+		"creado": "Copia de seguridad creada",
+		"creado-error": "Copia de seguridad creada con errores",
+		"stdErr": "Errores",
+		"stdOut": "Registro de ejecución"
+	}
+}

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.profesional.detail.title">Profesional</span> {{vm.profesional.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+		<dt><span data-translate="general.codigo"></span></dt>
+        <dd>
+            <span>{{vm.profesional.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.profesional.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.profesional.nombre}}</span>
+        </dd>
+    </dl>
+
+	<uib-accordion close-others="oneAtATime">
+		<div uib-accordion-group class="panel-default">	
+			<headeraccordion tr="proyectoApp.profesional.instituciones"></headeraccordion>
+			<items listaorigen="vm.instituciones" listadestino="vm.profesional.instituciones" readonly="true"
+				   solodetalle="true" campodetalle="nombre" tr="proyectoApp.profesional.institucion"></items>
+		</div>
+	</uib-accordion>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()" class="btn btn-primary" has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

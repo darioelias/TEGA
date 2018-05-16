@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.archivo.detail.title">Archivo</span> {{vm.archivo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="proyectoApp.archivo.detalle">Detalle</span></dt>
+        <dd>
+            <span>{{vm.archivo.detalle}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.archivo.direccion">Direccion</span></dt>
+        <dd>
+            <span>{{vm.archivo.direccion}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.archivo.muestra">Muestra</span></dt>
+        <dd>
+            <a ui-sref="muestra-detail({id:vm.archivo.muestra.id})">{{vm.archivo.muestra.id}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.archivo.extraccion">Extraccion</span></dt>
+        <dd>
+            <a ui-sref="extraccion-detail({id:vm.archivo.extraccion.id})">{{vm.archivo.extraccion.id}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.archivo.tipoArchivo">Tipo Archivo</span></dt>
+        <dd>
+            <a ui-sref="tipo-archivo-detail({id:vm.archivo.tipoArchivo.id})">{{vm.archivo.tipoArchivo.id}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.archivo.analisisGenotipo">Analisis Genotipo</span></dt>
+        <dd>
+            <a ui-sref="analisis-genotipo-detail({id:vm.archivo.analisisGenotipo.id})">{{vm.archivo.analisisGenotipo.id}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.archivo.proyecto">Proyecto</span></dt>
+        <dd>
+            <a ui-sref="proyecto-detail({id:vm.archivo.proyecto.id})">{{vm.archivo.proyecto.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="archivo-detail.edit({id:vm.archivo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

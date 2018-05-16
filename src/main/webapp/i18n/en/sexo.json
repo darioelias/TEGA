@@ -1,0 +1,10 @@
+{
+    "proyectoApp": {
+        "Sexo" : {
+            "null": "",
+            "FEMENINO": "FEMALE",
+            "MASCULINO": "MALE",
+            "INDEFINIDO": "UNDEFINED"
+        }
+    }
+}

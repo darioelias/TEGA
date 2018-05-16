@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.parametroProcedimiento.detail.title">Parametro</span> {{vm.parametro.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+		<dt><span data-translate="general.codigo"></span></dt>
+        <dd>
+            <span>{{vm.parametro.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.parametroProcedimiento.detalle"></span></dt>
+        <dd>
+            <span>{{vm.parametro.detalle}}</span>
+        </dd>
+		<dt><span data-translate="proyectoApp.parametroProcedimiento.tipo"></span></dt>
+        <dd>
+			<span data-translate="{{'enum.Tipo.' + vm.parametro.tipo}}"></span>
+        </dd>
+        <dt><span data-translate="proyectoApp.parametroProcedimiento.procedimiento">procedimiento</span></dt>
+        <dd>
+            <a ui-sref="procedimiento-detail({id:vm.parametro.procedimiento.id})">{{vm.parametro.procedimiento.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.parametroProcedimiento.categoriaParametroProcedimiento">categoria</span></dt>
+        <dd>
+            <a ui-sref="categoria-parametro-procedimiento-detail({id:vm.parametro.categoria.id})">{{vm.parametro.categoria.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.parametroProcedimiento.noEditable">noEditable</span></dt>
+        <dd>
+            <input type="checkbox" ng-model="vm.parametroProcedimiento.noEditable" disabled/>
+        </dd>
+		<dt><span data-translate="proyectoApp.parametroProcedimiento.valor"></span></dt>
+        <dd>
+            <valordinamico valor="vm.parametro.valor" tipo="vm.parametro.tipo" readonly="true"></valordinamico>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

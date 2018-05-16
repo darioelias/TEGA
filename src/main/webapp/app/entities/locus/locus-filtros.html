@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-md-3">		
+		<codefilter codigo="criterio.codigo" ></codefilter>
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>	
+	</div>
+	<div class="col-md-3">
+		<selectentity destino="criterio.idAnalisisGenotipos" servicio="AnalisisGenotipo"
+					  tr="proyectoApp.locus.analisisGenotipo" retornarid="true"
+					  has-authority="ROLE_ABM"></selectentity>	
+
+	</div>
+	<div class="col-md-3">
+		<div class="form-group" has-authority="ROLE_ABM">
+		    <label class="control-label" data-translate="proyectoApp.locus.publico" for="publico"></label>
+		    <select class="form-control" name="publico" ng-model="criterio.publico" id="publico" ng-change="cambioPublico()">
+				<option value=""></option>
+		        <option value="true" data-translate="enum.Logico.SI"></option>
+		        <option value="false" data-translate="enum.Logico.NO"></option>
+			</select>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<br/>
+		<ng-transclude></ng-transclude>
+	</div>
+</div>

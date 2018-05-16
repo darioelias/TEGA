@@ -1,0 +1,77 @@
+<div>
+    <h2 data-translate="proyectoApp.provincia.home.title">Provincias</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid" has-authority="ROLE_ABM">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary"  type="button" ng-click="vm.crearEditar()" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="proyectoApp.provincia.home.createLabel">
+                        Create new Provincia
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+	<div class="container-fluid">
+		<provinciafiltros criterio="vm.criterio"/>
+	</div>
+	<div class="row">
+		<btntabla actualizar="vm.loadAll" lista="vm.provincias" titulo="provincias"
+  				  camposexp="id,codigo,nombre,pais.nombre" class="pull-right"
+					servicio="Provincia" filtros="provinciafiltros" campodetalle="nombre"
+			  		trsel="proyectoApp.provincia.home.title"></btntabla>
+	</div>
+    <div class="table-responsive table-scroll">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.loadAll()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="codigo"><span data-translate="general.codigo"></span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nombre"><span data-translate="proyectoApp.provincia.nombre">Nombre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pais.nombre"><span data-translate="proyectoApp.provincia.pais">Pais</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="provincia in vm.provincias track by provincia.id">
+                    <td><a ui-sref="provincia-detail({id:provincia.id})">{{provincia.id}}</a></td>
+                    <td>{{provincia.codigo}}</td>
+                    <td>{{provincia.nombre}}</td>
+                    <td>
+                        <a ui-sref="pais-detail({id:provincia.pais.id})">{{provincia.pais.nombre}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="provincia-detail({id:provincia.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.crearEditar(provincia.id)"
+                                    class="btn btn-primary btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.eliminar(provincia.id)"
+                                    class="btn btn-danger btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<pietabla total="vm.totalItems" page="vm.page" itemspage="vm.itemsPerPage" 
+			  change="vm.loadAll" > </pietabla>
+</div>

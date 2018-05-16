@@ -1,0 +1,147 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMuestraLabel" data-translate="proyectoApp.muestra.home.createOrEditLabel">Create or edit a Muestra</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group" ng-show="vm.muestra.id">
+				    <label for="id" data-translate="global.field.id">ID</label>
+				    <input type="text" class="form-control" id="id" name="id"
+				            ng-model="vm.muestra.id" readonly />
+				</div>
+
+				
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.codigoInterno" for="field_codigoInterno">Codigo Interno</label>
+				    <input type="text" class="form-control" name="codigoInterno" id="field_codigoInterno"
+				            ng-model="vm.muestra.codigoInterno"
+				             />
+				</div>
+
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.codigoExterno" for="field_codigoExterno">Codigo Externo</label>
+				    <input type="text" class="form-control" name="codigoExterno" id="field_codigoExterno"
+				            ng-model="vm.muestra.codigoExterno"
+				             />
+				</div>
+
+
+				<inputdate valor="vm.muestra.fechaRecoleccion" tr="proyectoApp.muestra.fechaRecoleccion"> </inputdate>
+
+			</div>
+
+			<div class="col-md-3">
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.latitud" for="field_latitud">Latitud</label>
+				    <input type="number" class="form-control" name="latitud" id="field_latitud"
+				            ng-model="vm.muestra.latitud"
+				             />
+				</div>
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.longitud" for="field_longitud">Longitud</label>
+				    <input type="number" class="form-control" name="longitud" id="field_longitud"
+				            ng-model="vm.muestra.longitud"
+				             />
+				</div>
+
+				<selectentity destino="vm.muestra.region" tr="proyectoApp.muestra.region" campodetalle="nombre" servicio="Region"></selectentity>
+				<selectentity destino="vm.muestra.localidad" tr="proyectoApp.muestra.localidad" campodetalle="nombre" servicio="Localidad"></selectentity>
+
+			</div>
+
+			<div class="col-md-3">
+				
+				<selectentity destino="vm.muestra.profesional" tr="proyectoApp.muestra.profesional"  campodetalle="nombre" servicio="Profesional"></selectentity>		
+				
+				<selectentity destino="vm.muestra.modoRecoleccion" tr="proyectoApp.muestra.modoRecoleccion" campodetalle="nombre" servicio="ModoRecoleccion"></selectentity>                    
+			
+				<selectentity destino="vm.muestra.tejido" tr="proyectoApp.muestra.tejido" campodetalle="nombre" servicio="Tejido"></selectentity>               
+		
+				
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.sexo" for="field_sexo">Sexo</label>
+				    <select class="form-control" name="sexo" ng-model="vm.muestra.sexo" id="field_sexo">
+				        <option value="FEMENINO" data-translate="proyectoApp.Sexo.FEMENINO">FEMENINO</option>
+				        <option value="MASCULINO" data-translate="proyectoApp.Sexo.MASCULINO">MASCUINO</option>
+				        <option value="INDEFINIDO" data-translate="proyectoApp.Sexo.INDEFINIDO">INDEFINIDO</option>
+				    </select>
+				</div>
+
+			</div>
+
+			<div class="col-md-3"> 	
+				
+				<selectentity destino="vm.muestra.especie" tr="proyectoApp.muestra.especie" campodetalle="nombre" servicio="Especie"></selectentity>        
+				<selectentity destino="vm.muestra.institucion" tr="proyectoApp.muestra.institucion"  campodetalle="nombre" servicio="Institucion"></selectentity>
+
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.ubicacion" for="field_ubicacion">Ubicacion</label>
+				    <input type="text" class="form-control" name="ubicacion" id="field_ubicacion"
+				            ng-model="vm.muestra.ubicacion"
+				             />
+				</div>
+
+				<div class="form-group">
+				    <label class="control-label" data-translate="proyectoApp.muestra.publico" for="field_publico">Publico</label>
+					<input id="field_publico" name="field_publico" type="checkbox" 
+							ng-model="vm.muestra.publico"/>
+				</div>
+			</div>	
+		</div>
+
+
+
+		<div class="form-group">
+		    <label class="control-label" data-translate="proyectoApp.muestra.detalle" for="field_detalle">Detalle</label>
+		    <input type="text" class="form-control" name="detalle" id="field_detalle"
+		            ng-model="vm.muestra.detalle"
+		             />
+		</div>
+
+		<uib-accordion close-others="oneAtATime">
+			<div uib-accordion-group class="panel-default" >
+				<headeraccordion tr="proyectoApp.muestra.alelos" ></headeraccordion>
+				<alelogrilla lista="vm.muestra.alelos"/>
+			</div>
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="proyectoApp.muestra.conjuntosMuestras" ></headeraccordion>
+				<items listadestino="vm.muestra.conjuntosMuestras" 
+					   tr="proyectoApp.muestra.conjuntoMuestras"
+					   servicio="ConjuntoMuestras" filtros="conjuntomuestrasfiltros" ></items>
+			</div>
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="proyectoApp.muestra.proyectos" ></headeraccordion>
+				<items listadestino="vm.muestra.proyectos" 
+					   tr="proyectoApp.muestra.proyecto"
+					   servicio="Proyecto" filtros="proyectofiltros" ></items>
+			</div>
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="general.atributos" ></headeraccordion>
+				<atributogrilla atributos="vm.muestra.atributos" idobj="vm.muestra.id" 
+								servicio="Muestra" entidad="MUESTRA"> </atributogrilla>
+			</div>
+			<div uib-accordion-group class="panel-default" is-disabled="vm.muestra.id == null">	
+				<headeraccordion tr="general.archivos" disabled="vm.muestra.id == null"></headeraccordion>
+				<files lista="vm.muestra.archivos" idpadre="vm.muestra.id" tipopadre="MUESTRA"></files>
+			</div>
+		</uib-accordion>
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

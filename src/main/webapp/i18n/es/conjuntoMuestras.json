@@ -1,0 +1,29 @@
+{
+    "proyectoApp": {
+        "conjuntoMuestras" : {
+            "home": {
+                "title": "Conjuntos de Muestras",
+                "createLabel": "Crear nuevo Conjunto de Muestras",
+                "createOrEditLabel": "Crear o editar Conjunto de Muestras",
+                "search": "Search for Conjunto de Muestras"
+            },
+            "created": "Un nuevo Conjunto de Muestras ha sido creado con el identificador {{ param }}",
+            "updated": "Un Conjunto de Muestras ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Conjunto de Muestras ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Conjunto de Muestras {{ id }}?"
+            },
+            "detail": {
+                "title": "Conjunto de Muestras"
+            },
+            "codigo": "Código",
+            "detalle": "Detalle",
+            "muestras": "Muestras",
+			"muestra": "Muestra",
+			"analisisGenotipo":"Análisis de Genotipos",
+			"analisisSecuencias":"Análisis de Secuencias",
+			"publico": "Público",
+			"deleteByIdIn": "Se eliminaron los {{param}} Conjuntos de Muestras"
+        }
+    }
+}

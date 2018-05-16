@@ -1,0 +1,88 @@
+<div class="table-responsive ">
+	<div class="row" ng-if="!readonly">
+		<alerta lista="alertas"> </alerta>
+		<div class="col-md-3">
+			<selectentity destino="alelo.locus" servicio="Locus" watch="true" retornarcompleto="true"
+						  tr="proyectoApp.alelo.locus" opcional="true" ></selectentity>
+		</div>
+
+		<div class="col-md-2">
+		    <div class="form-group">
+		        <label class="control-label" data-translate="proyectoApp.alelo.indice" for="field_indice">Indice</label>
+					<select class="form-control" ng-model="alelo.indice" 
+							ng-options="i for i in rangoIndices(alelo.locus)">													
+					</select>
+		    </div>
+		</div>
+
+		<div class="col-md-2">
+		    <div class="form-group">
+		        <label class="control-label" data-translate="proyectoApp.alelo.valor" for="field_valor">Valor</label>
+		        <input type="text" class="form-control" name="valor" id="field_valor"
+		                ng-model="alelo.valor" />
+		    </div>
+		</div>
+
+		<div class="col-md-2">		
+		    <div class="form-group">
+				<br/>
+		        <label class="control-label" data-translate="proyectoApp.alelo.publico" for="field_publico">Publico</label>
+				<input id="field_publico" name="field_publico" type="checkbox" 
+						ng-model="alelo.publico"/>
+			</div>
+ 		</div>
+		
+		<div class="col-md-3">
+			<br/>
+			<button type="button"
+				    ng-click="aplicarAlelo()"
+				    class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-plus"></span>
+			</button>
+			<button type="button" 
+					ng-click="nuevoAlelo()"
+					class="btn btn-sm">
+				<span class="glyphicon glyphicon-ban-circle"></span>
+			</button>
+		</div>
+	</div>
+
+	<div class="table-responsive table-scroll-items">
+		<table class="jh-table table table-striped">
+			<thead>
+				<tr jh-sort="predicado" ascending="ascendente">
+					<th jh-sort-by="id" has-authority="ROLE_ABM"><span data-translate="general.id">ID</span><span class="glyphicon glyphicon-sort"></th>
+				    <th jh-sort-by="locus.codigo"><span data-translate="proyectoApp.alelo.locus"></span><span class="glyphicon glyphicon-sort"></th>
+				    <th jh-sort-by="indice"><span data-translate="proyectoApp.alelo.indice"></span><span class="glyphicon glyphicon-sort"></th>						       	
+				    <th jh-sort-by="valor"><span data-translate="proyectoApp.alelo.valor"></span><span class="glyphicon glyphicon-sort"></th>
+					<th jh-sort-by="publico" has-authority="ROLE_ABM"><span data-translate="proyectoApp.alelo.publico"></span><span class="glyphicon glyphicon-sort"></th>
+					<th ng-if="!readonly"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="a in lista | orderBy:predicado:!ascendente track by $index ">
+					<td has-authority="ROLE_ABM">{{a.id}}</td>
+					<td>{{a.locus.codigo}}</td>
+					<td>{{a.indice}}</td>
+					<td>{{a.valor}}</td>
+					<td has-authority="ROLE_ABM">
+						<input ng-disabled="true" type="checkbox" ng-model="a.publico"/>
+					</td>
+					<td ng-if="!readonly">
+						<button type="button"
+		                        ng-click="editarAlelo(a)"
+		                        class="btn btn-primary btn-sm">
+		                    <span class="glyphicon glyphicon-pencil"></span>
+		                </button>
+		                <button type="button"
+		                        ng-click="eliminarAlelo(a)"
+		                        class="btn btn-danger btn-sm">
+		                    <span class="glyphicon glyphicon-remove-circle"></span>
+		                </button>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

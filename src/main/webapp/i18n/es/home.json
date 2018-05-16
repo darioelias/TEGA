@@ -1,0 +1,9 @@
+{
+    "home": {
+        "title": "Bienvenido a TEGA: ",
+		"subtitle": "",
+        "logged": {
+            "message": "Está conectado como \"{{username}}\"."
+        }
+    }
+}

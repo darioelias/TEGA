@@ -1,0 +1,32 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.especie.detail.title">Especie</span> {{vm.especie.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+		<dt><span data-translate="general.codigo"></span></dt>
+        <dd>
+            <span>{{vm.especie.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.especie.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.especie.nombre}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.especie.taxonomia">taxonomia</span></dt>
+        <dd>
+            <span>{{vm.especie.taxonomia}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()"
+			class="btn btn-primary" has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

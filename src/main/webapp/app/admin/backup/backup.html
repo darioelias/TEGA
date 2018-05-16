@@ -1,0 +1,34 @@
+<form name="backupForm" ng-submit="vm.generarBackup()">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()" ng-disabled="vm.generando" >&times;</button>
+        <h4 class="modal-title" data-translate="backup.titulo">Backup</h4>
+    </div>
+    <div class="modal-body">
+        <alerta lista="vm.alertas" tiempo="10000"> </alerta>
+
+		<div class="form-group">
+			<label data-translate="backup.stdOut"></label>
+			<textarea ng-model="vm.resultado.stdOut" ng-readonly="true" 
+						class="form-control textarea" rows="6"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label data-translate="backup.stdErr"></label>
+			<textarea ng-model="vm.resultado.stdErr" ng-readonly="true" 
+						class="form-control textarea" rows="6"></textarea>
+		</div>
+
+    </div>
+    <div class="modal-footer">
+		<label ng-show="vm.generando" data-translate="backup.generando"></label>
+		<img ng-show="vm.generando" src="content/images/loading.gif"/>
+
+        <button ng-disabled="vm.generando" type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button ng-disabled="vm.generando" type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;<span data-translate="backup.generar"></span>
+        </button>
+    </div>
+</form>

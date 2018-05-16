@@ -1,0 +1,28 @@
+<div class="{{singroup ? '' : 'form-group'}}">
+    <label for="selector" data-translate="{{tr}}" ng-if="!sinlabel"></label>
+
+	<ui-select ng-if="!retornarid" ng-model="select.obj" theme="bootstrap" style="{{style}}" 
+			   on-select="cambio($item)" uis-open-close="foco(isOpen)" ng-required="!opcional">
+		<ui-select-match  allow-clear="{{opcional}}">{{$select.selected[campocodigo]}}</ui-select-match>
+
+		<ui-select-choices refresh="refresh($select.search)" repeat="ele in (listaorigen | filtroSelectorListaObj:$select.search:campocodigo:campodetalle)">
+			<div ng-bind-html="ele[campocodigo]"></div>
+			<small>
+				{{ele[campodetalle]}}
+			</small>
+		</ui-select-choices>
+	</ui-select>
+
+	<ui-select ng-if="retornarid" ng-model="select.obj" theme="bootstrap" style="width:100%" 
+			   on-select="cambio($item)" uis-open-close="foco(isOpen)" ng-required="!opcional">
+		<ui-select-match  allow-clear="{{opcional}}">{{$select.selected[1]}}</ui-select-match>
+		<ui-select-choices refresh="refresh($select.search)" repeat="ele in (listaorigen | filtroSelectorArray:$select.search)">
+			<div ng-bind-html="ele[1]"></div>
+			<small>
+				{{ele[2]}}
+			</small>
+		</ui-select-choices>
+	</ui-select>
+</div>
+
+

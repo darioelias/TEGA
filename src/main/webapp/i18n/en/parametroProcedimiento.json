@@ -1,0 +1,29 @@
+{
+    "proyectoApp": {
+        "parametroProcedimiento" : {
+            "home": {
+                "title": "Procedure parameters",
+                "createLabel": "Create a new Procedure parameter",
+                "createOrEditLabel": "Create or edit a Procedure parameter",
+                "search": "Search for Procedure parameter"
+            },
+            "created": "A new Procedure parameter is created with identifier {{ param }}",
+            "updated": "A Procedure parameter is updated with identifier {{ param }}",
+            "deleted": "A Procedure parameter is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Procedure parameter {{ id }}?"
+            },
+            "detail": {
+                "title": "Procedure parameter"
+            },
+			"codigo":"Code",
+            "detalle": "Detail",
+			"valor": "Value",
+			"tipo": "Type",
+			"categoriaParametroProcedimiento": "Category",
+			"procedimiento": "Procedure",
+			"deleteByIdIn": "The {{param}} Procedure parameters were eliminated",
+			"noEditable": "Not editable"
+        }
+    }
+}

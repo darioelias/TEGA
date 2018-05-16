@@ -1,0 +1,76 @@
+
+<form name="analisisGenotipoAlelosForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAnalisisGenotipoLabel">
+			<span data-translate="proyectoApp.analisisGenotipo.home.alelos"></span>
+			{{vm.analisisGenotipo.id +' - '+vm.analisisGenotipo.codigo}}
+		</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group">
+
+			<div class="table-scroll">
+				<table class="jh-table table table-striped table-condensed">
+				    <thead>
+						<th>
+							<a ng-click="vm.setExpandedConjuntosMuestras()">
+								<span data-translate="proyectoApp.analisisGenotipo.conjuntoMuestras"></span>
+							</a>
+						</th>				
+						<th>
+							<a ng-click="vm.setExpandedMuestras()">
+								<span data-translate="proyectoApp.analisisGenotipo.muestra">Muestra</span>
+							</a>
+						</th>	
+						<th colspan="{{locus.ploidia}}" ng-repeat="locus in vm.analisisGenotipo.loci track by locus.id" class="text-center">	
+								<span class="text-center">{{locus.codigo}}</span>
+						</th>			        	       
+				    </thead>
+
+<!--{{$index == (alelo.locus.ploidia - 1) / 2 ? 'pull-center' : ($index < (alelo.locus.ploidia - 1) / 2 ? 'pull-right' : 'pull-left')}}-->
+
+<!--class="input_grd {{alelo.locus.ploidia == 2 ? ($even ? 'pull-right' : 'pull-left') : ('pull-center')}}"-->
+				    <tbody ng-repeat="conjuntoMuestras in vm.analisisGenotipo.conjuntosMuestras">
+							<tr>					
+								<td class="td_grd" rowspan="{{vm.rowspanConjuntoMuestras(conjuntoMuestras)}}">
+									<a ng-click="conjuntoMuestras.expanded = !conjuntoMuestras.expanded"><span>{{conjuntoMuestras.codigo}}</span></a>								
+								</td>
+							</tr>
+							<tr ng-if="conjuntoMuestras.expanded" ng-repeat="muestra in conjuntoMuestras.muestras">
+								<td class="td_grd">
+									<a ng-click="muestra.expanded = !muestra.expanded"><span>{{muestra.codigoInterno}}</span></a>
+								</td>
+								<td ng-if="muestra.expanded" class="td_grd " ng-repeat="alelo in muestra.alelos track by $index">											
+									 <input type="text" class="input_grd" 
+											name="valor" id="field_valor" 
+											ng-model="alelo.valor" ng-readonly="!vm.editable"/>						
+								</td>
+				            </tr>
+				    </tbody>
+				</table>
+			</div>
+
+		</div>
+
+    </div>
+
+
+
+    <div class="modal-footer">
+		<button type="button" class="btn btn-proceso" ng-click="vm.exportarAlelos()" >
+			<span class="glyphicon glyphicon-export"></span>
+		</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" 
+				class="btn btn-primary" has-authority="ROLE_ABM">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

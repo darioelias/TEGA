@@ -1,0 +1,32 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.institucion.detail.title">Institucion</span> {{vm.institucion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+		<dt><span data-translate="general.codigo"></span></dt>
+        <dd>
+            <span>{{vm.institucion.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.institucion.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.institucion.nombre}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.institucion.localidad">Localidad</span></dt>
+        <dd>
+            <a ui-sref="localidad-detail({id:vm.institucion.localidad.id})">{{vm.institucion.localidad.nombre}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()" 
+			class="btn btn-primary" has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

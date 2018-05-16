@@ -1,0 +1,110 @@
+<div>
+    <h2 data-translate="proyectoApp.analisisGenotipo.home.title">Analisis Genotipos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid" has-authority="ROLE_ABM">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary"  type="button" ng-click="vm.crearEditar()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="proyectoApp.analisisGenotipo.home.createLabel">
+                        Create new Analisis Genotipo
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+	<div class="container-fluid">
+
+		<analisisgenotipofiltros criterio="vm.criterio"/>
+	</div>
+
+	<div class="row">
+		<btntabla actualizar="vm.loadAll" lista="vm.analisisGenotipos" 
+				  titulo="analisisGenotipos"  camposexp="{{vm.camposExp}}"   
+				  servicio="AnalisisGenotipo" filtros="analisisgenotipofiltros"
+				  trsel="proyectoApp.analisisGenotipo.home.title" class="pull-right"
+				  urlexpatributos="api/analisis-genotipos-exportar-atributos"
+				  getparametrosquery="vm.getParametrosQuery"></btntabla>
+	</div>
+    <div class="table-responsive table-scroll">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.loadAll()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+					<th jh-sort-by="codigo"><span data-translate="proyectoApp.analisisGenotipo.codigo">Código</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="estado" has-authority="ROLE_ABM"><span data-translate="general.estado"></span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fecha"><span data-translate="proyectoApp.analisisGenotipo.fecha">Fecha</span> <span class="glyphicon glyphicon-sort"></span></th> 
+                    <th jh-sort-by="proyecto.codigo"><span data-translate="proyectoApp.analisisGenotipo.proyecto">Proyecto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="detalle"><span data-translate="proyectoApp.analisisGenotipo.detalle">Detalle</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="analisisGenotipo in vm.analisisGenotipos track by analisisGenotipo.id">
+                    <td><a ui-sref="analisis-genotipo-detail({id:analisisGenotipo.id})">{{analisisGenotipo.id}}</a></td>
+					<td><a ui-sref="analisis-genotipo-detail({id:analisisGenotipo.id})">{{analisisGenotipo.codigo}}</a></td>
+					<td has-authority="ROLE_ABM">
+						<span data-translate="{{'enum.EstadoAnalisisGenotipo.'+analisisGenotipo.estado}}"></span>
+						<span>{{vm.detalleEjecucion(analisisGenotipo)}}</span>
+					</td>          
+                    <td>{{analisisGenotipo.fecha | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="proyecto-detail({id:analisisGenotipo.proyecto.id})">{{analisisGenotipo.proyecto.codigo}}</a>
+                    </td>
+                    <td>{{analisisGenotipo.detalle}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+							<button class="btn btn-proceso" 
+									type="button"
+                                    ng-click="vm.ejecutarProcedimiento(analisisGenotipo.id)"
+									ng-show="vm.disponible(analisisGenotipo)"
+									has-authority="ROLE_ABM">
+								<span class="glyphicon glyphicon-cog"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="proyectoApp.analisisGenotipo.proc.abreviacion">Proc.</span>
+							</button>
+							<button class="btn btn-proceso" 
+									type="button"
+                                    ng-click="vm.verLog(analisisGenotipo.id)"
+									ng-show="!vm.disponible(analisisGenotipo)"
+									has-authority="ROLE_ABM">
+								<span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="proyectoApp.analisisGenotipo.verLog.log">Log</span>
+							</button>
+                            <button type="submit"
+                                    ui-sref="analisis-genotipo-detail({id:analisisGenotipo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+							<button type="button"
+                                    ng-click="vm.alelos(analisisGenotipo.id)"
+                                    class="btn btn-primary btn-sm"
+									ng-disabled="!vm.disponible(analisisGenotipo)">
+                                <span class="glyphicon glyphicon-edit"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="proyectoApp.analisisGenotipo.alelos"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.crearEditar(analisisGenotipo.id)"
+                                    class="btn btn-primary btn-sm"
+									ng-disabled="!vm.disponible(analisisGenotipo)"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.eliminar(analisisGenotipo.id)"
+                                    class="btn btn-danger btn-sm"
+									ng-disabled="!vm.disponible(analisisGenotipo)"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<pietabla total="vm.totalItems" page="vm.page" itemspage="vm.itemsPerPage" change="vm.loadAll"> </pietabla>
+</div>

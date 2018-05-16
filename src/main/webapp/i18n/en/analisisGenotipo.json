@@ -1,0 +1,69 @@
+{
+    "proyectoApp": {
+        "analisisGenotipo" : {
+            "home": {
+                "title": "Genotypes Analysis",
+                "createLabel": "Create a new Genotype Analysis",
+                "createOrEditLabel": "Create or edit a Genotype Analysis",
+                "search": "Search for Genotype Analysis",
+				"alelos": "Genotypes Analysis - Alleles: "
+            },
+            "created": "A new Genotype Analysis is created with identifier {{ param }}",
+            "updated": "A Genotype Analysis is updated with identifier {{ param }}",
+            "deleted": "A Genotype Analysis is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Genotype Analysis {{ id }}?"
+            },
+            "detail": {
+                "title": "Genotypes Analysis"
+            },
+            "codigo": "Code",
+            "detalle": "Detail",
+            "fecha": "Date",
+            "archivos": "Files",
+            "locus": "Locus",
+			"loci": "Loci",
+            "conjuntosMuestras": "Samples Sets",
+			"conjuntoMuestras": "Samples Set",
+            "proyecto": "Project",
+			"muestra": "Sample",
+			"alelos": "Alleles",
+			"publico": "Public",
+			"procedimiento": "Procedure",
+			"procedimientoEje": "Procedure in execution",
+			"ejecuciones": "Procedures results",
+			"parametros": "Parameters",
+			"ejecutandoParentesis": "(running)",
+			"alelos-importar-exportar": {
+				"nulo": "Null Value",
+				"contenido": "Content",
+				"tituloImpExp": "Import/Export Alleles",
+				"tituloExp": "Export Alleles",
+				"conNombres": "With names"
+			},
+			"error":{
+				"no-disponible":"Genotypes Analysis does not Available",
+				"no-ejecucion":"The Genotype Analysis is not in Execution",
+				"sin-loci": "Genotype Analysis does not have Loci",
+				"sin-conjuntos-muestras": "Genotype Analysis does not have Samples Sets",
+				"conjuntos-muestras-vacio": "Genotype Analysis has empty Sample Sets",
+				"sin-procedimientos":"There are no Procedures loaded on the platform"
+			},
+			"deleteByIdIn": "The {{param}} Genotype Analysis were eliminated",
+			"proc":{
+				"titulo": "Procedures execution, Genotypes Analysis: ",
+				"abreviacion": "Proc.",
+				"noEjecutar": "Only generate input files",
+				"parametros": "Settings",
+				"envio": "The execution of {{nomProc}} was started for the Analysis of Genotypes: {{codAnalisis}}",
+				"tituloPregunta": "Confirm procedure execution",
+				"pregunta": "Are you sure you want to run {{nomProc}} for the Genotype Analysis: {{codAnalisis}}?",
+				"sinParametros": "This procedure does not have editable Parameters."
+			},
+			"verLog":{
+				"titulo": "Execution log, Genotypes Analysis: ",
+				"log": "Log"
+			}
+        }
+    }
+}

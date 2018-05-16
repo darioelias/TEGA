@@ -1,0 +1,12 @@
+<div class="{{singroup ? '' : 'form-group'}}">
+    <label for="tipo_sel" data-translate="{{tr}}" ng-if="!sinlabel"></label>
+
+    <select class="form-control" name="tipo_sel" ng-model="tipo" id="tipo_sel" 
+			ng-change="change()" ng-required="!opcional" ng-disabled="readonly">
+        <option value="NUMERICO" data-translate="enum.Tipo.NUMERICO"></option>
+        <option value="ENTERO" data-translate="enum.Tipo.ENTERO"></option>
+        <option value="CARACTER" data-translate="enum.Tipo.CARACTER"></option>
+        <option value="LOGICO" data-translate="enum.Tipo.LOGICO"></option>
+        <option value="FECHA" data-translate="enum.Tipo.FECHA"></option>
+    </select>
+</div>

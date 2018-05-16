@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.parametroTega.detail.title">Parametro</span> {{vm.parametro.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+		<dt><span data-translate="general.codigo"></span></dt>
+        <dd>
+            <span>{{vm.parametro.codigo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.parametroTega.detalle"></span></dt>
+        <dd>
+            <span>{{vm.parametro.detalle}}</span>
+        </dd>
+		<dt><span data-translate="proyectoApp.parametroTega.tipo"></span></dt>
+        <dd>
+			<span data-translate="{{'enum.Tipo.' + vm.parametro.tipo}}"></span>
+        </dd>
+		<dt><span data-translate="proyectoApp.parametroTega.publico"></span></dt>
+        <dd>
+            <input type="checkbox" ng-model="vm.parametro.publico" disabled/>
+        </dd>
+		<dt><span data-translate="proyectoApp.parametroTega.valor"></span></dt>
+        <dd>
+            <valordinamico valor="vm.parametro.valor" tipo="vm.parametro.tipo" readonly="true"></valordinamico>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"  ng-click="vm.editar()" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

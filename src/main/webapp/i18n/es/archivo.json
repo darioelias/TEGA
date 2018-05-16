@@ -1,0 +1,27 @@
+{
+    "proyectoApp": {
+        "archivo" : {
+            "home": {
+                "title": "Archivos",
+                "createLabel": "Crear nuevo Archivo",
+                "createOrEditLabel": "Crear o editar Archivo",
+                "search": "Search for Archivo"
+            },
+            "created": "Un nuevo Archivo ha sido creado con el identificador {{ param }}",
+            "updated": "Un Archivo ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Archivo ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Archivo {{ id }}?"
+            },
+            "detail": {
+                "title": "Archivo"
+            },
+            "detalle": "Detalle",
+            "direccion": "Direccion",
+            "muestra": "Muestra",
+            "tipoArchivo": "Tipo Archivo",
+            "analisisGenotipo": "Analisis Genotipo",
+            "proyecto": "Proyecto"
+        }
+    }
+}

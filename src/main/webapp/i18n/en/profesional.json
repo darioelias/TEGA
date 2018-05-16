@@ -1,0 +1,25 @@
+{
+    "proyectoApp": {
+        "profesional" : {
+            "home": {
+                "title": "Professionals",
+                "createLabel": "Create a new Professional",
+                "createOrEditLabel": "Create or edit a Professional",
+                "search": "Search for Professional"
+            },
+            "created": "A new Professional is created with identifier {{ param }}",
+            "updated": "A Professional is updated with identifier {{ param }}",
+            "deleted": "A Professional is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Professional {{ id }}?"
+            },
+            "detail": {
+                "title": "Professional"
+            },
+            "nombre": "Name",
+			"institucion": "Institution",
+            "instituciones": "Institutions",
+			"deleteByIdIn": "The {{param}} Professionals were eliminated"
+        }
+    }
+}

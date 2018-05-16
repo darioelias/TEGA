@@ -1,0 +1,51 @@
+<div class="form-group">
+
+	<div class="row" ng-hide="readonly">
+		<div class="col-md-3">
+				<selectentity  destino="sel" campocodigo="{{campocodigo}}" campodetalle="{{campodetalle}}" campoid="{{campoid}}"
+							   tr="{{tr}}" servicio="{{servicio}}" singroup="true" watch="true"></selectentity>						
+
+		</div>
+		<div class="col-md-3">
+			<br/>
+			<button type="button" class="btn btn-sm btn-primary" ng-click="agregar()" >
+				<span class="glyphicon glyphicon-plus"></span>
+				<span class="hidden-xs hidden-sm"></span>
+			</button>
+
+			 <button type="button" class="btn btn-sm" ng-click="buscar()" ng-show="buscarVisible" >
+				<span class="glyphicon glyphicon-search"></span>
+			</button>	
+		</div> 
+	</div>  
+
+	<div class="table-responsive table-scroll-items">
+		<table class="table table-striped">
+			<thead>
+				<tr jh-sort="predicado" ascending="ascendente">
+					<th jh-sort-by="{{campoid}}"><span data-translate="general.id">ID</span><span class="glyphicon glyphicon-sort"></th>
+					<th jh-sort-by="{{campocodigo}}" ng-hide="solodetalle"><span data-translate="general.codigo">Código</span><span class="glyphicon glyphicon-sort"></th>
+					<th jh-sort-by="{{campodetalle}}"><span data-translate="general.detalle">Detalle</span><span class="glyphicon glyphicon-sort"></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="ele in listadestino | orderBy:predicado:!ascendente track by ele[campoid]">
+					<td>{{ele[campoid]}}</td>
+					<td ng-hide="solodetalle">{{ele[campocodigo]}}</td>
+					<td>{{ele[campodetalle]}}</td>
+					<td class="text-right">
+						<div class="btn-group flex-btn-group-container" ng-hide="readonly">
+							<button ng-click="eliminar(ele)"
+						            class="btn btn-danger btn-sm">
+						        <span class="glyphicon glyphicon-remove-circle"></span>
+						        <span class="hidden-xs hidden-sm"></span>
+						    </button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

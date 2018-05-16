@@ -1,0 +1,76 @@
+<form name="importarForm" ng-submit="vm.save()">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" data-translate="proyectoApp.analisisGenotipo.alelos-importar-exportar.tituloImpExp" ng-if="vm.editable"></h4>
+		<h4 class="modal-title" data-translate="proyectoApp.analisisGenotipo.alelos-importar-exportar.tituloExp" ng-if="!vm.editable"></h4>   
+	</div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+
+		<div class="row">
+			<div class="col-md-3">
+				<label class="control-label" data-translate="general.separador" for="separador"></label>
+				<input type="text" class="form-control" name="separador" id="separador" 
+					   ng-model="vm.separador"/>
+			</div>
+			<div class="col-md-3">
+				<label class="control-label" data-translate="proyectoApp.analisisGenotipo.alelos-importar-exportar.nulo" for="nulo"></label>
+				<input type="text" class="form-control" name="nulo" id="nulo" 
+					   ng-model="vm.nulo"/>
+			</div>
+
+			<div class="col-md-6">
+				<br/>
+				<div class="form-group pull-right">
+					<button type="button" class="btn btn-primary" ng-click="vm.actualizarContenido()" >
+						<span class="glyphicon glyphicon-refresh"></span>
+					</button>
+					<exportar lista="vm.contenido.matriz" matriz="true"
+									  titulo="alelos" separador="vm.separador"
+									  nulo="vm.nulo"></exportar>
+
+					<button type="button" class="btn btn-proceso" 
+							ng-click="vm.vaciar()" has-authority="ROLE_ABM">
+						<span class="glyphicon glyphicon-repeat"></span>
+					</button>
+				</div>
+			</div>			
+<!--			<div class="col-md-3">-->
+<!--				<br/>-->
+<!--				-->
+<!--				<label class="control-label" data-translate="proyectoApp.analisisGenotipo.alelos-importar.conNombres" for="conNombres"></label>-->
+<!--				<input type="checkbox" class="checkbox" name="conNombres" id="conNombres" -->
+<!--					   ng-model="vm.contenido.conNombres"/>-->
+<!--			</div>			-->
+		</div>
+<!--		<div class="row">-->
+<!--			-->
+<!--		</div>-->
+		<br/>
+		<label class="control-label" data-translate="proyectoApp.analisisGenotipo.alelos-importar-exportar.contenido" for="contenido"></label>
+		<textarea class="form-control textarea" ng-model="vm.contenidoStr" 
+				  name="contenido" id="contenido" rows="15" cols="120"/>
+		<br/>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3"></div>
+
+			<div class="col-md-6">
+				<div class="form-group pull-right">
+					<button type="submit" ng-disabled="importarForm.$invalid" 
+							class="btn btn-primary" has-authority="ROLE_ABM">
+						<span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save"></span>
+					</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+						<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+    </div>
+<!--    <div class="modal-footer">		-->
+<!--        -->
+<!--    </div>-->
+</form>

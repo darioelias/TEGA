@@ -1,0 +1,5 @@
+codigoInternoMuestra,codigoLocus,indice,valor,publico
+SET1|EXT1|1,LOCUS9,1,100,false
+SET1|EXT1|1,LOCUS9,2,200,true
+
+

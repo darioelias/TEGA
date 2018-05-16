@@ -1,0 +1,29 @@
+{
+    "proyectoApp": {
+        "conjuntoMuestras" : {
+            "home": {
+                "title": "Samples Sets",
+                "createLabel": "Create a new Samples Set",
+                "createOrEditLabel": "Create or edit a Samples Set",
+                "search": "Search for Samples Set"
+            },
+            "created": "A new Samples Set is created with identifier {{ param }}",
+            "updated": "A Samples Set is updated with identifier {{ param }}",
+            "deleted": "A Samples Set is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Samples Set {{ id }}?"
+            },
+            "detail": {
+                "title": "Samples Set"
+            },
+            "codigo": "Code",
+            "detalle": "Detail",
+            "muestras": "Samples",
+			"muestra":"Sample",
+			"analisisGenotipo":"Analysis of Genotypes",
+			"analisisSecuencias":"Sequence Analysis",
+			"publico": "Public",
+			"deleteByIdIn": "The {{param}} Samples Sets were eliminated"
+        }
+    }
+}

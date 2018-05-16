@@ -1,0 +1,27 @@
+{
+    "proyectoApp": {
+        "parametroTega" : {
+            "home": {
+                "title": "TEGA parameters",
+                "createLabel": "Create a new TEGA parameter",
+                "createOrEditLabel": "Create or edit a TEGA parameter",
+                "search": "Search for TEGA parameter"
+            },
+            "created": "A new TEGA parameter is created with identifier {{ param }}",
+            "updated": "A TEGA parameter is updated with identifier {{ param }}",
+            "deleted": "A TEGA parameter is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete TEGA parameter {{ id }}?"
+            },
+            "detail": {
+                "title": "TEGA parameter"
+            },
+			"codigo":"Code",
+            "detalle": "Detail",
+			"valor": "Value",
+			"tipo": "Type",
+			"publico": "Public",
+			"deleteByIdIn": "The {{param}} TEGA parameters were eliminated"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+<div>
+    <h2 data-translate="proyectoApp.muestra.home.title">Muestras</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid" has-authority="ROLE_ABM">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" type="button" ng-click="vm.crearEditar()" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="proyectoApp.muestra.home.createLabel">
+                        Create new Muestra
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+	<br/>
+	<div class="container-fluid">
+		<muestrafiltros criterio="vm.criterio" />
+	</div>
+
+	<div class="row">
+		<btntabla actualizar="vm.loadAll" lista="vm.muestras" titulo="muestras"
+				  camposexp="{{vm.camposExp}}" importar="vm.importar" 
+				  servicio="Muestra" filtros="muestrafiltros"
+				  trsel="proyectoApp.muestra.home.title" 
+				  campocodigo="codigoInterno"
+				  urlexpatributos="api/muestras-exportar-atributos"
+				  getparametrosquery="vm.getParametrosQuery"
+				  class="pull-right"></btntabla>
+	</div>
+
+	  <div class="table-responsive table-scroll">
+        <table class="jh-table table table-striped ">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.loadAll()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+					<th jh-sort-by="codigoInterno"><span data-translate="proyectoApp.muestra.codigoInterno">Codigo Interno</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="codigoExterno"><span data-translate="proyectoApp.muestra.codigoExterno">Codigo Externo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fechaRecoleccion"><span data-translate="proyectoApp.muestra.fechaRecoleccion"></span> <span class="glyphicon glyphicon-sort"></span></th>		
+					<th jh-sort-by="region.nombre"><span data-translate="proyectoApp.muestra.region">Region</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localidad.nombre"><span data-translate="proyectoApp.muestra.localidad">Localidad</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="especie.nombre"><span data-translate="proyectoApp.muestra.especie">Especie</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ubicacion" has-authority="ROLE_ABM"><span data-translate="proyectoApp.muestra.ubicacion">Ubicacion</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="muestra in vm.muestras track by muestra.id">
+					<td><a ui-sref="muestra-detail({id:muestra.id})"> {{muestra.id}}</a></td>
+					<td>{{muestra.codigoInterno}}</td>
+                    <td>{{muestra.codigoExterno}}</td>
+					<td>{{muestra.fechaRecoleccion | date:'mediumDate'}}</td>
+					<td>
+						<a ui-sref="region-detail({id:muestra.region.id})">{{muestra.region.nombre}}</a>
+                    </td>
+                    <td>
+						<a ui-sref="localidad-detail({id:muestra.localidad.id})">{{muestra.localidad.nombre}}</a>
+
+                    </td>
+                    <td>
+						<a ui-sref="especie-detail({id:muestra.especie.id})">{{muestra.especie.nombre}}</a>
+                    </td>
+                    <td has-authority="ROLE_ABM">{{muestra.ubicacion}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="muestra-detail({id:muestra.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.crearEditar(muestra.id)"
+                                    class="btn btn-primary btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.eliminar(muestra.id)"
+                                    class="btn btn-danger btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+	<pietabla total="vm.totalItems" page="vm.page" itemspage="vm.itemsPerPage" change="vm.loadAll"> </pietabla>
+</div>

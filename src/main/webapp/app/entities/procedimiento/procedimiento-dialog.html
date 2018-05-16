@@ -1,0 +1,173 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProcedimientoLabel" data-translate="proyectoApp.procedimiento.home.createOrEditLabel">Create or edit a Procedimiento</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.procedimiento.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.procedimiento.id" readonly />
+        </div>
+		<div class="form-group">
+	        <label class="control-label" data-translate="general.codigo" for="field_codigo">Código</label>
+	        <input type="text" class="form-control" name="codigo" id="field_codigo"
+	                ng-model="vm.procedimiento.codigo"
+	                required />
+	        <div ng-show="editForm.codigo.$invalid">
+	            <p class="help-block"
+	                ng-show="editForm.codigo.$error.required" data-translate="entity.validation.required">
+	                This field is required.
+	            </p>
+	        </div>
+	    </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.procedimiento.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.procedimiento.nombre"
+                    required />
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+		<div class="form-group">
+		    <label class="control-label" data-translate="proyectoApp.procedimiento.detalle" for="field_detalle">Detalle</label>
+		    <input type="text" class="form-control" name="detalle" id="field_detalle"
+		            ng-model="vm.procedimiento.detalle"
+		             />
+		</div>
+
+		<div class="form-group">
+		    <label class="control-label" data-translate="proyectoApp.procedimiento.comandoEje" for="field_comandoEje">comandoEje</label>
+		    <input type="text" class="form-control" name="comandoEje" id="field_comandoEje"
+		            ng-model="vm.procedimiento.comandoEje"
+		             />
+		</div>
+		<div class="form-group">
+		    <label class="control-label" data-translate="proyectoApp.procedimiento.comandoLog" for="field_comandoLog">comandoLog</label>
+		    <input type="text" class="form-control" name="comandoLog" id="field_comandoLog"
+		            ng-model="vm.procedimiento.comandoLog"
+		             />
+		</div>
+		<div class="form-group">
+			<label class="control-label" data-translate="proyectoApp.procedimiento.publico" for="field_publico">Publico</label>
+			<input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.procedimiento.publico"/>
+
+		</div>
+		<uib-accordion close-others="oneAtATime">
+			<div uib-accordion-group class="panel-default" >	
+				<headeraccordion tr="proyectoApp.procedimiento.chkExportar"></headeraccordion>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarGenotipos" for="exportarGenotipos">exportarGenotipos</label>
+							<input id="exportarGenotipos" name="exportarGenotipos" type="checkbox" 
+									ng-model="vm.procedimiento.exportarGenotipos"/>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarGenotiposStructure" for="exportarGenotiposStructure">exportarGenotiposStructure</label>
+							<input id="exportarGenotiposStructure" name="exportarGenotiposStructure" type="checkbox" 
+									ng-model="vm.procedimiento.exportarGenotiposStructure"/>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarGenotiposGenepop" for="exportarGenotiposGenepop">exportarGenotiposGenepop</label>
+							<input id="exportarGenotipos" name="exportarGenotiposGenepop" type="checkbox" 
+									ng-model="vm.procedimiento.exportarGenotiposGenepop"/>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarMuestras" for="exportarMuestras">exportarMuestras</label>
+							<input id="exportarMuestras" name="exportarMuestras" type="checkbox" 
+									ng-model="vm.procedimiento.exportarMuestras"/>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarMuestrasAtributos" for="exportarMuestrasAtributos">exportarMuestras</label>
+							<input id="exportarMuestrasAtributos" name="exportarMuestrasAtributos" type="checkbox" 
+									ng-model="vm.procedimiento.exportarMuestrasAtributos"/>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarConjuntosMuestras" for="exportarConjuntosMuestras">exportarConjuntosMuestras</label>
+							<input id="exportarConjuntosMuestras" name="exportarConjuntosMuestras" type="checkbox" 
+									ng-model="vm.procedimiento.exportarConjuntosMuestras"/>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarConjuntosMuestrasAtributos" for="exportarConjuntosMuestrasAtributos">exportarConjuntosMuestrasAtributos</label>
+							<input id="exportarConjuntosMuestrasAtributos" name="exportarConjuntosMuestrasAtributos" type="checkbox" 
+									ng-model="vm.procedimiento.exportarConjuntosMuestrasAtributos"/>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarLoci" for="exportarLoci">exportarLoci</label>
+							<input id="exportarLoci" name="exportarLoci" type="checkbox" 
+									ng-model="vm.procedimiento.exportarLoci"/>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarLociAtributos" for="exportarLociAtributos">exportarLociAtributos</label>
+							<input id="exportarLociAtributos" name="exportarLociAtributos" type="checkbox" 
+									ng-model="vm.procedimiento.exportarLociAtributos"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label" data-translate="proyectoApp.procedimiento.exportarCantidades" for="exportarCantidades">exportarCantidades</label>
+							<input id="exportarCantidades" name="exportarCantidades" type="checkbox" 
+									ng-model="vm.procedimiento.exportarCantidades"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div uib-accordion-group class="panel-default" is-disabled="vm.procedimiento.id == null">	
+				<headeraccordion tr="general.archivos" disabled="vm.procedimiento.id == null"></headeraccordion>
+				<files lista="vm.procedimiento.archivos" idpadre="vm.procedimiento.id" tipopadre="PROCEDIMIENTO"></files>
+			</div>
+		</uib-accordion>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

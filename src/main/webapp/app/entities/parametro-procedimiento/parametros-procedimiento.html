@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="proyectoApp.parametroProcedimiento.home.title">ParametroProcedimiento</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid" has-authority="ROLE_ADMIN">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary"  type="button" ng-click="vm.crearEditar()" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="proyectoApp.parametroProcedimiento.home.createLabel">
+                        Create new ParametroProcedimiento
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+	<div class="container-fluid">
+
+		<parametroProcedimientofiltros criterio="vm.criterio"/>
+
+	</div>
+	<div class="row">
+		<btntabla actualizar="vm.loadAll" lista="vm.parametros" titulo="parametros_procedimientos"
+  				  camposexp="id,codigo,detalle,valor,procedimiento.codigo,categoria.codigo,noEditable"  
+					servicio="ParametroProcedimiento" filtros="parametroProcedimientofiltros" 
+			  		trsel="proyectoApp.parametroProcedimiento.home.title" class="pull-right"></btntabla>
+	</div>
+    <div class="table-responsive table-scroll">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.loadAll()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="codigo"><span data-translate="general.codigo"></span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="detalle"><span data-translate="proyectoApp.parametroProcedimiento.detalle"></span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="valor"><span data-translate="proyectoApp.parametroProcedimiento.valor"></span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="parametro in vm.parametros track by parametro.id">
+                    <td><a ui-sref="parametro-procedimiento-detail({id:parametro.id})">{{parametro.id}}</a></td>
+                    <td>{{parametro.codigo}}</td>
+                    <td>{{parametro.detalle}}</td>
+                    <td><valordinamico valor="parametro.valor" tipo="parametro.tipo" readonly="true"></valordinamico></td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="parametro-procedimiento-detail({id:parametro.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.crearEditar(parametro.id)"
+                                    class="btn btn-primary btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="button"
+                                    ng-click="vm.eliminar(parametro.id)"
+                                    class="btn btn-danger btn-sm"
+									has-authority="ROLE_ABM">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<pietabla total="vm.totalItems" page="vm.page" itemspage="vm.itemsPerPage" change="vm.loadAll"> </pietabla>
+</div>

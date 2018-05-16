@@ -1,0 +1,52 @@
+{
+    "proyectoApp": {
+        "alelo" : {
+            "home": {
+                "title": "Alleles",
+                "createLabel": "Create a new Allele",
+                "createOrEditLabel": "Create or edit a Allele",
+                "search": "Search for Alleles"
+            },
+            "created": "A new Allele is created with identifier {{ param }}",
+            "updated": "A Allele is updated with identifier {{ param }}",
+            "deleted": "A Allele is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Allele {{ id }}?"
+            },
+            "detail": {
+                "title": "Allele"
+            },
+            "valor": "Value",
+            "indice": "Index",
+            "locus": "Locus",
+            "muestra": "Sample",
+			"publico": "Public",		
+			"nulo":"Null Value",
+
+			"importacion": {
+				"titulo": "Alleles Import",
+                "alelosCreados":"Created Alleles",
+				"alelosModificados": "Modified Alleles",
+				"alelosNulos": "Null Alleles",
+				"lociCreados":"Created Loci",
+				"lociModificados": "Modified Loci",
+				"lociNoIdentificados": "Unidentified Loci",
+				"conjuntosMuestrasNoIdentificados": "Unidentified Sets",
+				"muestrasNoIdentificadas": "Unidentified Samples",
+				"muestrasNoIdentificadasLinea": "Unidentified Samples (file line)",
+				"lociNoIdentificadosLinea": "Unidentified Loci (file line)",
+				"alelosRepetidosLinea": "Repeated Alleles (file line)",
+				"tipo": "Import Type",
+				"MATRIZ": "Matrix",
+				"LISTA": "List",
+				"tipo-obligatorio": "You must indicate a Import Type"
+            },
+
+			"locus-obligatorio": "You must indicate a Locus",
+			"indice-obligatorio": "You must indicate a Index",
+			"indice-ploidia": "The Index must be less than or equal to the ploidy of the Locus",
+			"locus-indice-repetido": "A Allele with the indicated Locus and Index already exists",
+			"deleteByIdIn": "The {{param}} Alleles were eliminated"
+        }
+    }
+}

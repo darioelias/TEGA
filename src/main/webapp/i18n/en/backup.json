@@ -1,0 +1,13 @@
+{
+	"backup":{
+		"titulo": "Backup",
+		"generando": "Making backup",
+		"generar": "Make",
+		"error": "An error occurred while doing the backup",
+		"error-descarga": "The generated backup was not found",
+		"creado": "Backup created",
+		"creado-error": "Backup created with errors",
+		"stdErr": "Errors",
+		"stdOut": "Execution log"
+	}
+}

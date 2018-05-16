@@ -1,0 +1,18 @@
+<div class="table-responsive table-scroll">
+    <table class="jh-table table table-striped">
+        <thead>
+            <tr>
+                <th><span data-translate="general.codigo"></span> </th>
+				<th><span data-translate="general.detalle"></span> </th>
+                <th><span data-translate="proyectoApp.parametroProcedimiento.valor"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="parametro in parametros track by parametro.id">
+                <td><a ui-sref="parametro-procedimiento-detail({id:parametro.id})">{{parametro.codigo}}</a></td>
+                <td>{{parametro.detalle}}</td>
+				<td class="col-md-3"><valordinamico valor="parametro.valor" tipo="parametro.tipo" readonly="readonly"></valordinamico></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

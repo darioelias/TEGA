@@ -1,0 +1,23 @@
+{
+    "proyectoApp": {
+        "region" : {
+            "home": {
+                "title": "Regiones",
+                "createLabel": "Crear nueva Región",
+                "createOrEditLabel": "Crear o editar Región",
+                "search": "Buscar Región"
+            },
+            "created": "Una nueva Región ha sido creada con el identificador {{ param }}",
+            "updated": "Una Región ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Región ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Región {{ id }}?"
+            },
+            "detail": {
+                "title": "Región"
+            },
+            "nombre": "Nombre",
+			"deleteByIdIn": "Se eliminaron las {{param}} Regiones"
+        }
+    }
+}

@@ -1,0 +1,111 @@
+
+<div>
+    <h2><span data-translate="proyectoApp.muestra.detail.title">Muestra</span> {{vm.muestra.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+       <dt><span data-translate="proyectoApp.muestra.codigoInterno">Codigo Interno</span></dt>
+        <dd>
+            <span>{{vm.muestra.codigoInterno}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.codigoExterno">Codigo Externo</span></dt>
+        <dd>
+            <span>{{vm.muestra.codigoExterno}}</span>
+        </dd>
+		<dt><span data-translate="proyectoApp.muestra.fechaRecoleccion"></span></dt>
+        <dd>
+            <span>{{vm.muestra.fechaRecoleccion | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.sexo">Sexo</span></dt>
+        <dd>
+            <span data-translate="{{'proyectoApp.Sexo.' + vm.muestra.sexo}}">{{vm.muestra.sexo}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.latitud">Latitud</span></dt>
+        <dd>
+            <span>{{vm.muestra.latitud}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.longitud">Longitud</span></dt>
+        <dd>
+            <span>{{vm.muestra.longitud}}</span>
+        </dd>
+        <dt has-authority="ROLE_ABM"><span data-translate="proyectoApp.muestra.ubicacion">Ubicacion</span></dt>
+        <dd has-authority="ROLE_ABM">
+            <span>{{vm.muestra.ubicacion}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.detalle">Detalle</span></dt>
+        <dd>
+            <span>{{vm.muestra.detalle}}</span>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.region">Region</span></dt>
+        <dd>
+			<a ui-sref="region-detail({id:vm.muestra.region.id})">{{vm.muestra.region.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.localidad">Localidad</span></dt>
+        <dd>
+			<a ui-sref="localidad-detail({id:vm.muestra.localidad.id})">{{vm.muestra.localidad.nombre}}</a>
+        </dd>
+        <dt has-authority="ROLE_ABM"><span data-translate="proyectoApp.muestra.profesional">Profesional</span></dt>
+        <dd has-authority="ROLE_ABM">
+			<a ui-sref="profesional-detail({id:vm.muestra.profesional.id})">{{vm.muestra.profesional.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.institucion">Institucion</span></dt>
+        <dd>
+			<a ui-sref="institucion-detail({id:vm.muestra.institucion.id})">{{vm.muestra.institucion.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.especie">Especie</span></dt>
+        <dd>
+			<a ui-sref="especie-detail({id:vm.muestra.especie.id})">{{vm.muestra.especie.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.tejido">Tejido</span></dt>
+        <dd>
+			<a ui-sref="tejido-detail({id:vm.muestra.tejido.id})">{{vm.muestra.tejido.nombre}}</a>
+        </dd>
+        <dt><span data-translate="proyectoApp.muestra.modoRecoleccion">Modo Recoleccion</span></dt>
+        <dd>
+			<a ui-sref="modo-recoleccion-detail({id:vm.muestra.modoRecoleccion.id})">{{vm.muestra.modoRecoleccion.nombre}}</a>
+        </dd>
+		<dt has-authority="ROLE_ABM"><span data-translate="proyectoApp.muestra.publico">Publico</span></dt>
+        <dd has-authority="ROLE_ABM">
+            <input id="field_publico" name="field_publico" type="checkbox" 
+					ng-model="vm.muestra.publico" disabled/>
+        </dd>
+    </dl>
+
+	<uib-accordion close-others="oneAtATime">
+		<div has-authority="ROLE_USER_EXTENDED" uib-accordion-group class="panel-default" >
+			<headeraccordion tr="proyectoApp.muestra.alelos" ></headeraccordion>
+			<alelogrilla lista="vm.muestra.alelos" readonly="true"/>
+		</div>
+		<div has-authority="ROLE_USER_EXTENDED" uib-accordion-group class="panel-default">	
+			<headeraccordion tr="proyectoApp.muestra.conjuntosMuestras"></headeraccordion>
+			<items listadestino="vm.muestra.conjuntosMuestras" 
+					tr="proyectoApp.muestra.conjuntoMuestras" readonly="true"></items>
+		</div>
+		<div uib-accordion-group class="panel-default">	
+			<headeraccordion tr="proyectoApp.muestra.proyectos" ></headeraccordion>
+			<items listadestino="vm.muestra.proyectos" 
+				   tr="proyectoApp.muestra.proyecto" readonly="true"></items>
+		</div>
+		<div uib-accordion-group class="panel-default" >	
+			<headeraccordion tr="general.atributos" ></headeraccordion>
+			<atributogrilla atributos="vm.muestra.atributos" idobj="vm.muestra.id" 
+							servicio="Muestra" entidad="MUESTRA" readonly="true" padre="vm.muestra"> </atributogrilla>
+		</div>
+		<div uib-accordion-group class="panel-default">	
+			<headeraccordion tr="general.archivos"></headeraccordion>
+			<files lista="vm.muestra.archivos" readonly="true"></files>
+		</div>
+	</uib-accordion>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ng-click="vm.editar()"
+			class="btn btn-primary" has-authority="ROLE_ABM">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

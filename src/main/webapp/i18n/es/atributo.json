@@ -1,0 +1,26 @@
+{
+    "proyectoApp": {
+        "atributo" : {
+            "home": {
+                "title": "Atributos",
+                "createLabel": "Crear nuevo Atributo",
+                "createOrEditLabel": "Crear o editar Atributo",
+                "search": "Buscar Atributo"
+            },
+            "created": "Un nuevo Atributo ha sido creada con el identificador {{ param }}",
+            "updated": "Un nuevo Atributo ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Un nuevo Atributo ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Atributo {{ id }}?"
+            },
+            "detail": {
+                "title": "Atributo"
+            },
+            "detalle": "Detalle",
+			"tipo": "Tipo",
+			"entidad": "Entidad",
+			"valor": "Valor por defecto",
+			"deleteByIdIn": "Se eliminaron los {{param}} Atributos"
+        }
+    }
+}

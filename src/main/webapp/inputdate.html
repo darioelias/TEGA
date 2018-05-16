@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label class="control-label" data-translate="{{tr}}" for="fecha"></label>
+    <div class="input-group" >
+        <input id="fecha" type="text" class="form-control" name="fecha" 
+			   uib-datepicker-popup="{{dateformat}}" ng-model="valor" is-open="open"
+			   ng-disabled="readonly" ng-model-options="opcionesDate" readonly="true"
+        />
+        <span ng-if="!readonly" class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openCalendar()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </div>
+</div>
+
+

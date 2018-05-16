@@ -1,0 +1,20 @@
+<input ng-show="tipo != 'LOGICO' && tipo != 'FECHA'" id="valor_txt" name="valor_txt" type="text" 
+	 class="form-control" ng-model="valor" ng-disabled="readonly" validvalordinamico/>
+
+<input ng-show="tipo == 'LOGICO'" id="valor_chk" name="valor_chk"
+	type="checkbox" class="form-control" 
+	ng-model="valor" ng-true-value="'1'" ng-false-value="'0'" ng-disabled="readonly"/>
+
+<div class="input-group" ng-if="!readonly" ng-show="tipo == 'FECHA'">
+    <input id="valor_fecha" type="text" class="form-control" name="valor_fecha" 
+		   uib-datepicker-popup="{{dateformat}}" ng-model="valorFecha" is-open="popupCalendar.opened"
+		   readonly="true" ng-change="selectDate(valorFecha)" show-button-bar="false"
+    />
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="openCalendar()"><i class="glyphicon glyphicon-calendar"></i></button>
+    </span>
+</div>
+
+<input ng-if="readonly && tipo == 'FECHA'" id="valor_fecha_ro" type="text" class="form-control" name="valor_fecha_ro" 
+		ng-model="valor" ng-disabled="true" />
+

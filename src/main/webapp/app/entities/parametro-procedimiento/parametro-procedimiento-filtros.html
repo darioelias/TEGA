@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-3">		
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>	
+		<selectentity destino="criterio.idProcedimiento" servicio="Procedimiento" 
+					  tr="proyectoApp.parametroProcedimiento.procedimiento" 
+					  retornarid="true" campodetalle="nombre"></selectentity>						
+	</div>
+	<div class="col-md-3">		
+		<codefilter codigo="criterio.codigo" ></codefilter>	
+		<selectentity destino="criterio.idCategoria" servicio="CategoriaParametroProcedimiento" 
+					  tr="proyectoApp.parametroProcedimiento.categoriaParametroProcedimiento" 
+					  retornarid="true" campodetalle="nombre"></selectentity>
+	</div>
+
+	<div class="col-md-3">		
+		<filter valor="criterio.valor" tr="proyectoApp.parametroProcedimiento.valor" ></filter>
+	</div>
+
+	<div class="col-md-3">	
+		<filter valor="criterio.detalle" tr="proyectoApp.parametroProcedimiento.detalle" ></filter>	
+	</div>
+<ng-transclude></ng-transclude>
+</div>

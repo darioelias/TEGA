@@ -1,0 +1,52 @@
+{
+    "proyectoApp": {
+        "alelo" : {
+            "home": {
+                "title": "Alelos",
+                "createLabel": "Crear nuevo Alelo",
+                "createOrEditLabel": "Crear o editar Alelo",
+                "search": "Buscar Alelo"
+            },
+            "created": "Un nuevo Alelo ha sido creado con el identificador {{ param }}",
+            "updated": "Un Alelo ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Alelo ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Alelo {{ id }}?"
+            },
+            "detail": {
+                "title": "Alelo"
+            },
+            "valor": "Valor",
+            "indice": "Índice",
+            "locus": "Locus",
+            "muestra": "Muestra",
+			"publico": "Público",
+			"nulo":"Valor Nulo",
+
+			"importacion": {
+				"titulo": "Importación de Alelos",
+				"alelosCreados":"Alelos Creados",
+				"alelosModificados": "Alelos Modificados",
+				"alelosNulos": "Alelos Nulos",
+				"lociCreados":"Loci Creados",
+				"lociModificados": "Loci Modificados",
+				"lociNoIdentificados": "Loci No Identificados",
+				"conjuntosMuestrasNoIdentificados": "Conjuntos No Identificados",
+				"muestrasNoIdentificadas": "Muestras No Identificadas",
+				"muestrasNoIdentificadasLinea": "Muestras No Identificadas (linea del archivo)",
+				"lociNoIdentificadosLinea": "Loci No Identificados (linea del archivo)",
+				"alelosRepetidosLinea": "Alelos Repetidos (linea del archivo)",
+				"tipo": "Tipo de Importación",
+				"MATRIZ": "Matriz",
+				"LISTA": "Lista",
+				"tipo-obligatorio": "Debe indicar un Tipo de Importación"
+            },
+
+			"locus-obligatorio": "Debe indicar un Locus",
+			"indice-obligatorio": "Debe indicar un Índice",
+			"indice-ploidia": "El Índice debe ser menor o igual a la ploidia del Locus",
+			"locus-indice-repetido": "Ya existe un Alelo con el Locus e Índice indicados",
+			"deleteByIdIn": "Se eliminaron los {{param}} Alelos"
+        }
+    }
+}

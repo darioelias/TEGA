@@ -1,0 +1,41 @@
+<div class="row">
+
+	<div class="col-md-3">
+		<codefilter codigo="criterio.codigo"></codefilter>
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>
+	</div>
+
+	<div class="col-md-3">
+		<datefilter desde="criterio.desde" hasta="criterio.hasta"></datefilter>	
+	</div>	
+
+	<div class="col-md-3">
+		<selectentity  destino="criterio.idProcedimiento" retornarid="true"
+					  tr="proyectoApp.analisisGenotipo.procedimientoEje" servicio="Procedimiento"></selectentity>						
+			
+		<div class="form-group" has-authority="ROLE_ABM">
+			<label class="control-label" data-translate="general.estado" for="estado"></label>
+			<select class="form-control" name="estado" ng-model="criterio.estado" id="estado"  ng-change="cambioEstado()">
+				<option value=""></option>
+			    <option value="DISPONIBLE" data-translate="enum.EstadoAnalisisGenotipo.DISPONIBLE"></option>
+			    <option value="EJECUTANDO" data-translate="enum.EstadoAnalisisGenotipo.EJECUTANDO"></option>
+			</select>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<selectentity  destino="criterio.idProyecto" retornarid="true"
+					  tr="proyectoApp.analisisGenotipo.proyecto" servicio="Proyecto"></selectentity>						
+
+		<div class="form-group" has-authority="ROLE_ABM">
+		    <label class="control-label" data-translate="proyectoApp.analisisGenotipo.publico" for="publico"></label>
+		    <select class="form-control" name="publico" ng-model="criterio.publico" id="publico" ng-change="cambioPublico()">
+				<option value=""></option>
+		        <option value="true" data-translate="enum.Logico.SI"></option>
+		        <option value="false" data-translate="enum.Logico.NO"></option>
+			</select>
+		</div>
+	</div>
+
+	<ng-transclude></ng-transclude>
+</div>

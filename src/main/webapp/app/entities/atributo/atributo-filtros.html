@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-md-3">	
+		<filter valor="criterio.id" tr="general.id" tipo="number"></filter>
+	</div>
+
+	<div class="col-md-3">	
+		<codefilter codigo="criterio.codigo"></codefilter>
+	</div>
+
+	<div class="col-md-3">		
+		<filter valor="criterio.detalle" tr="proyectoApp.atributo.detalle" ></filter>
+	</div>
+
+	<div class="col-md-3">	
+		<div class="form-group">
+		    <label class="control-label" data-translate="proyectoApp.atributo.entidad" for="entidad">Entidad</label>
+			<select class="form-control" name="entidad" ng-model="criterio.entidad" 
+					id="entidad" ng-change="cambioEntidad()">
+				<option value=""></option>
+				<option value="MUESTRA" data-translate="enum.Entidad.MUESTRA"></option>
+				<option value="CONJUNTO_MUESTRAS" data-translate="enum.Entidad.CONJUNTO_MUESTRAS"></option>
+				<option value="LOCUS" data-translate="enum.Entidad.LOCUS"></option>
+				<option value="ANALISIS_GENOTIPO" data-translate="enum.Entidad.ANALISIS_GENOTIPO"></option>
+				<option value="PROYECTO" data-translate="enum.Entidad.PROYECTO"></option>
+			</select>
+		</div>
+	</div>
+	<ng-transclude></ng-transclude>
+
+</div>

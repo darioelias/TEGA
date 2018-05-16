@@ -1,0 +1,23 @@
+{
+    "proyectoApp": {
+        "modoRecoleccion" : {
+            "home": {
+                "title": "Modos de Recolección",
+                "createLabel": "Crear nuevo Modo de Recolección",
+                "createOrEditLabel": "Crear o editar Modo de Recolección",
+                "search": "Search for Modo de Recolección"
+            },
+            "created": "Un nuevo Modo de Recolección ha sido creado con el identificador {{ param }}",
+            "updated": "Un Modo de Recolección ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Modo de Recolección ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Modo de Recolección {{ id }}?"
+            },
+            "detail": {
+                "title": "Modo de Recolección"
+            },
+            "nombre": "Nombre",
+			"deleteByIdIn": "Se eliminaron los {{param}} Modos de Recolección"
+        }
+    }
+}

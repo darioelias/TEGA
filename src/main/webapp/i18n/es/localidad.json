@@ -1,0 +1,24 @@
+{
+    "proyectoApp": {
+        "localidad" : {
+            "home": {
+                "title": "Localidades",
+                "createLabel": "Crear nueva Localidad",
+                "createOrEditLabel": "Crear o editar Localidad",
+                "search": "Buscar Localidad"
+            },
+            "created": "Una nueva Localidad ha sido creada con el identificador {{ param }}",
+            "updated": "Una Localidad ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Localidad ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Localidad {{ id }}?"
+            },
+            "detail": {
+                "title": "Localidad"
+            },
+            "nombre": "Nombre",
+            "provincia": "Provincia",
+			"deleteByIdIn": "Se eliminaron las {{param}} Localidades"
+        }
+    }
+}

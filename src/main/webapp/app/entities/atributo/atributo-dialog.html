@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAtributoLabel" data-translate="proyectoApp.atributo.home.createOrEditLabel">Create or edit a Atributo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.atributo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.atributo.id" readonly />
+        </div>
+		<div class="form-group">
+	        <label class="control-label" data-translate="general.codigo" for="field_codigo">Código</label>
+	        <input type="text" class="form-control" name="codigo" id="field_codigo"
+	                ng-model="vm.atributo.codigo"
+	                required />
+	        <div ng-show="editForm.detalle.$invalid">
+	            <p class="help-block"
+	                ng-show="editForm.codigo.$error.required" data-translate="entity.validation.required">
+	                This field is required.
+	            </p>
+	        </div>
+	    </div>
+
+		<selecttipo tipo="vm.atributo.tipo" opcional="false" readonly="vm.atributo.id"></selecttipo>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.atributo.entidad" for="entidad">Entidad</label>
+			<select class="form-control" name="entidad" ng-model="vm.atributo.entidad" 
+					ng-disabled="vm.atributo.id" id="entidad"  required>
+				<option value="MUESTRA" data-translate="enum.Entidad.MUESTRA"></option>
+				<option value="CONJUNTO_MUESTRAS" data-translate="enum.Entidad.CONJUNTO_MUESTRAS"></option>
+				<option value="LOCUS" data-translate="enum.Entidad.LOCUS"></option>
+				<option value="ANALISIS_GENOTIPO" data-translate="enum.Entidad.ANALISIS_GENOTIPO"></option>
+				<option value="PROYECTO" data-translate="enum.Entidad.PROYECTO"></option>
+			</select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.atributo.detalle" for="field_detalle">Detalle</label>
+            <input type="text" class="form-control" name="detalle" id="field_detalle"
+                    ng-model="vm.atributo.detalle"
+                    required />
+            <div ng-show="editForm.detalle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.detalle.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+		<div class="form-group">
+            <label class="control-label" data-translate="proyectoApp.atributo.valor" for="field_valor">Valor</label>
+			<valordinamico valor="vm.atributo.valor" tipo="vm.atributo.tipo" setvalordefecto="true"></valordinamico>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

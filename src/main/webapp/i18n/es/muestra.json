@@ -1,0 +1,89 @@
+{
+    "proyectoApp": {
+        "muestra" : {
+            "home": {
+                "title": "Muestras",
+                "createLabel": "Crear nueva Muestra",
+                "createOrEditLabel": "Crear o editar Muestra",
+                "search": "Buscar Muestra",
+				"map": "Mapa de Muestras"
+            },
+            "created": "Una nueva Muestra ha sido creada con el identificador {{ param }}",
+            "updated": "Una Muestra ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Muestra ha sido eliminadaa con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Muestra {{ id }}?"
+            },
+            "detail": {
+                "title": "Muestra"
+            },
+            "fecha": "Fecha",
+            "peso": "Peso",
+            "largo": "Largo",
+            "codigoInterno": "Código Interno",
+            "codigoExterno": "Código Externo",
+            "sexo": "Sexo",
+            "temperaturaAmbiente": "Temperatura Ambiente",
+            "conductividadAmbiente": "Conductividad Ambiente",
+            "altura": "Altura",
+            "latitud": "Latitud",
+            "longitud": "Longitud",
+            "ubicacion": "Ubicación",
+            "detalle": "Detalle",
+            "muestras": "Muestras",
+            "archivos": "Archivos",
+            "region": "Región",
+            "localidad": "Localidad",
+            "profesional": "Profesional",
+            "institucion": "Institución",
+            "especie": "Especie",
+            "tejido": "Tejido",
+            "modoRecoleccion": "Modo Recolección",
+			"conjuntoMuestras": "Conjunto de Muestras",
+			"fechaRecoleccion": "Fecha de Recolección",
+			"desdeRecoleccion":"Recolección Desde",
+			"hastaRecoleccion":"Recolección Hasta",
+			"proyecto": "Proyecto",
+			"proyectos": "Proyectos",
+			"publico": "Pública",
+			"alelos":"Alelos",
+			"conjuntosMuestras": "Conjunto de Muestras",
+			"deleteByIdIn": "Se eliminaron las {{param}} Muestras",
+
+        	"importacion" : {
+				"titulo":"Importación de Muestras",
+
+				"muestrasCreadas":"Muestras Creadas",
+				"muestrasModificadas": "Muestras Modificadas",
+				"muestrasCreadas":"Muestras Creadas",
+				"muestrasModificadas": "Muestras Modificadas",
+				"proyectosCreados": "Proyectos Creados",
+				"regionesCreadas": "Regiones Creadas",
+				"especiesCreadas": "Especies Creadas",
+				"localidadesCreadas": "Localidades Creadas",
+				"provinciasCreadas": "Provincias Creadas",
+				"paisesCreados": "Paises Creados",
+				"profesionalesCreados": "Profesionales Creados",
+				"institucionesCreadas": "Instituciones Creadas",
+				"tejidosCreados": "Tejidos Creados",
+				"modosRecoleccionCreados": "Modos de Recolección Creados",
+				"conjuntoMuestrasCreados": "Conjunto de Muestras Creados",
+
+				"conjuntosMuestrasNoIdentificados": "Conjuntos No Identificados",
+				"muestrasNoIdentificadas": "Muestras No Identificadas",
+				"atributosNoIdentificados": "Atributos No Identificados",
+				"atributosInvalidos": "Valores Inválidos (Atrib./Fila)",
+				"atributosValidos": "Valores Válidos",
+				"muestrasProcesadas": "Muestras procesadas",
+
+				"datosAImportar": "Datos a importar",
+				"MUESTRAS": "Muestras",
+				"ATRIBUTOS": "Atributos extras de Muestras",
+				"datosAImportar-obligatorio": "Debe indicar los datos a importar",
+				"error":{
+					"sinCampoDeMuestra":"No se encontró el campo identificador de las Muestras"
+				}
+			}
+        }
+    }
+}
