@@ -5,7 +5,7 @@
 [![Build Status](https://api.travis-ci.org/darioelias/TEGA.svg?branch=master)](https://travis-ci.org/darioelias/TEGA)
 
 # TEGA (Tools for Evolutionary and Genetic Analysis)
-TEGA is a WEB platform designed for the management of biological data, with emphasis on population genetics studies. This platform is free and any research group can install it in their institute, and modify it.
+TEGA is a WEB-based standalone software (WEB-based platform) designed for the management of biological data, with emphasis on population genetics studies. This platform is free and any research group can install it in their institute, and modify it.
 
 - TEGA objectives are:
     * Facilitating data management.
