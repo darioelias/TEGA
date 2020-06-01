@@ -17,7 +17,7 @@ In the [manual](manual/) folder there are the manuals that mention the character
 
 ## Citation
 To cite TEGA, the following article should be referenced:
-> Dario E. Elias and Eva C. Rueda. 2018. Tools for Evolutionary and Genetic Analysis (TEGA): A new platform for the management of molecular and environmental data. ... (in publication)
+> Dario E. Elias and Eva C. Rueda (2020) Tools for Evolutionary and Genetic Analysis (TEGA): A new platform for the management of molecular and environmental data. *Genetics and Molecular Biology*, 43, 2, e20180272. DOI: https://doi.org/10.1590/1678-4685-GMB-2018-0272
 
 ## License
 Copyright (C) 2018 Dario E. Elias & Eva C. Rueda
