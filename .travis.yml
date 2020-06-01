@@ -5,7 +5,7 @@ node_js:
   - "10"
 jdk:
   - openjdk8
-sudo: true
+sudo: false
 cache:
   directories:
     - node
