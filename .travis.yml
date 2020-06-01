@@ -2,7 +2,7 @@ os:
   - linux
 language: java
 node_js:
-  - "4.7.0"
+  - "7"
 jdk:
   - openjdk8
 sudo: false
