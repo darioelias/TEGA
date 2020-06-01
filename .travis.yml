@@ -5,7 +5,7 @@ node_js:
   - "10"
 jdk:
   - openjdk8
-sudo: false
+sudo: true
 cache:
   directories:
     - node
@@ -17,7 +17,7 @@ before_install:
   - nvm install $NODE_VERSION
   - npm install -g npm@6.1.0
   - npm install -g n
-  - n stable
+  - sudo n stable
   - npm install -g bower@1.7.9
   - npm install -g gulp-cli@2.2.1
   - node -v
